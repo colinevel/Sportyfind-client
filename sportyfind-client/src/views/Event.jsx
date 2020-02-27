@@ -4,7 +4,7 @@ export default class Event extends Component {
     render() {
         return (
             <div>
-                
+                EVENT DETAILS
             </div>
         )
     }

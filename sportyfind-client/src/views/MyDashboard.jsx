@@ -4,7 +4,7 @@ export default class MyDashboard extends Component {
     render() {
         return (
             <div>
-                
+                MY DASHBOARD
             </div>
         )
     }

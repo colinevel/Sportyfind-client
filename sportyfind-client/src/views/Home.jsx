@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import SportsList from "./../components/SportsList";
 import SportsCard from "./../components/SportsCard";
@@ -31,6 +32,18 @@ export default function Home() {
             <div key={i}>
               <h2>{sport.name}</h2>
               <img src={sport.image} />
+=======
+import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+
+export default class Home extends Component {
+    render() {
+        return (
+            <div>
+               <Link className="link" activeClassName="is-active" to="/events">
+        events
+      </Link>
+>>>>>>> 9fc281d71b043710fed1bd3ac2ee0c9e95ca0263
             </div>
           </Link>
         ))}
