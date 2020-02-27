@@ -6,6 +6,8 @@ export default function Avatar({user}) {
 
 const [avatar, setAvatar] = useState(null);
 
+
+
 useEffect(() => {
   apiHandler
     .get(`/users`)
