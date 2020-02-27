@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import logo from "./../../styles/logo.css";
 
 export default function Logo() {
     return (
         <div>
-            <img src="./../../../images/logoSportify.png" />
+            <img id="logo" src="./../../../images/logoSportify.png" />
         </div>
     )
 }

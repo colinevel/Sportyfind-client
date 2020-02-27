@@ -20,8 +20,6 @@ import UserContext from "./auth/UserContext";
 import { ProtectedRoute } from "./auth/ProtectedRoute";
 
 
-
-
 export default function App() {
   const { isLoading } = useAuth();
   
@@ -33,8 +31,6 @@ export default function App() {
     currentUser,
     setCurrentUser
   };
-
-  
 
   return (
     // the context provider will make currentUser informations down the component tree
@@ -48,16 +44,20 @@ export default function App() {
           <main id="content_main">
             <Switch>
               <Route exact path="/" component={Home} />
+              
               <Route exact path="/events" component={Events} />
-              <Route path="/events/:id" component={Event} />
+              
               <Route path="/signin" component={Signin} />
               <Route path="/signup" component={Signup} />
               {/* check the protected route in src/auth folder */}
-              <ProtectedRoute path="/users/dashboard" component={MyDashboard} />
-              <ProtectedRoute path="/users/:id" component={User} />
-              <ProtectedRoute path="/users/edit/:id" component={UpdateUser} />
-              <ProtectedRoute path="/events/create" component={CreateEvent} />
-              <ProtectedRoute path="/events/edit/:id" component={UpdateEvent} />
+              <Route path="/users/dashboard" component={MyDashboard} />
+              <Route path="/users/:id" component={User} />
+              <Route path="/users/edit/:id" component={UpdateUser} />
+              <Route path="/events/create" component={CreateEvent} />
+              <Route path="/events/edit/:id" component={UpdateEvent} />
+
+              
+              <Route path="/events/:id" component={Event} />
            
               
               <Route path="*" component={NotFound} />
