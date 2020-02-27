@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 export default class Home extends Component {
     render() {
         return (
             <div>
-                HOME PAGE
+               <Link className="link" activeClassName="is-active" to="/events">
+        events
+      </Link>
             </div>
         )
     }
