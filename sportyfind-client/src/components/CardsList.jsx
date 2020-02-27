@@ -5,11 +5,11 @@ import EventsCard from "../components/EventsCard";
 export default function EventsCards({ events }) {
     return (
         <React.Fragment>
-            <Link to={`/events/${events._id}`}>
+            <div>
                 {events.map((event, i) => (
                     <EventsCard event={event} key={i} />
                 ))}
-            </Link>
+            </div>
         </React.Fragment>
     )
 }
