@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
+
 // custom tools
 import APIHandler from "../api/APIHandler";
 
-// import CustomInputFile from "./../icon/IconAvatarAdmin";
-
 // styles
 import "../styles/CreateEvent.css"
-// Don't forget to import CSS file
+
 
 export default withRouter(function CreateEvent({
   mode = "create",
@@ -26,7 +25,6 @@ export default withRouter(function CreateEvent({
     description: "",
     sport: "",
     sports: [],
-    occurence:"",
     isRequesting: false
   });
 
@@ -39,19 +37,17 @@ export default withRouter(function CreateEvent({
       const sportsRes = await APIHandler.get(`/sports`);
       newState.sports = sportsRes.data.sports;
 
-      if (mode === "edit") {
-        const editEventRes = await APIHandler.get(`/events/edit/${_id}`);
+    //   if (mode === "edit") {
+    //     const editEventRes = await APIHandler.get(`/events/edit/${_id}`, state);
 
-        // In the state we want to store the id's of artist & labels
-        // Because of the <selects> and when we post / patch to the server
-        if (editEventRes.data.sports) editEventRes.data.sports = editEventRes.data.sports._id;
+    //     // if (editEventRes.data.sport) editEventRes.data.sport = editEventRes.data.sport._id;
 
-        // Convert date
-        editEventRes.data.date =  new Date(editEventRes.data.date).toISOString().slice(0,10);
+    //     // Convert date
+    //     editEventRes.data.date =  new Date(editEventRes.data.date).toISOString().slice(0,10);
 
-        // Add the edited Album data on the newState Object
-        Object.assign(newState, editEventRes.data)
-      }
+    //     // Add the edited Album data on the newState Object
+    //     Object.assign(newState, editEventRes.data)
+    //   }
 
       setState(newState);
 
@@ -74,9 +70,8 @@ export default withRouter(function CreateEvent({
       if (mode === "create") {
         const apiResult = await APIHandler.post("/events/create", state);
       }
-      else {
-        const apiResult = await APIHandler.patch(`/events/edit/${match.params.id}`, state);
-      }
+      else await APIHandler.patch(`/events/edit/${match.params.id}`, state);
+      
 
       history.push("/events");
     } catch (apiErr) {
@@ -94,7 +89,8 @@ export default withRouter(function CreateEvent({
         Sport
       </label>
       <select id="sport" value={state.sport} > 
-          <option value="" disabled>Select a sport</option>
+          <option value="" disabled>
+        Select a sport</option>
         {state.sports.map((sport, i) => (
           <option value={sport._id} key={i}>{sport.name}</option>
         ))}
@@ -121,7 +117,7 @@ export default withRouter(function CreateEvent({
       <input
         className="input"
         id="date"
-        type="date"
+        type="datetime-local"
         value={state.date}
       />
       </div>
@@ -167,10 +163,11 @@ export default withRouter(function CreateEvent({
 
 
       <div className="nameinput">
-    <button className="btn" disabled={state.isRequesting}>{mode === "create" ? 'Create' : 'Edit'} Event</button>
+    <button className="btn" disabled={state.isRequesting}> Create Event</button>
     </div>
     </form>
 
   );
 
 });
+
