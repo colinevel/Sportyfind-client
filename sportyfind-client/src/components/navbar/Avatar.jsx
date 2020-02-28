@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import apiHandler from "./../../api/APIHandler";
 import avatar from "./../../styles/avatar.css";
-import DropdownButton from "react-bootstrap/DropdownButton";
+var Dropdown = require('react-simple-dropdown');
+var DropdownTrigger = Dropdown.DropdownTrigger;
+var DropdownContent = Dropdown.DropdownContent;
 
-export default function Avatar({ user }) {
+
+export default function Avatar() {
   const [avatar, setAvatar] = useState(null);
 
   useEffect(() => {
     apiHandler
       .get(`/users`)
       .then(res => {
-        setAvatar(res.data.users[0].avatar);
+        setAvatar(res.data.users.avatar);
         console.log("this is the avatar", res.data.users);
       })
       .catch(err => {
@@ -19,15 +22,26 @@ export default function Avatar({ user }) {
   }, []);
 
   if (!avatar) return <div>No avatars yet</div>;
-
   return (
     <div>
-      <img id="avatar" src={avatar} />
-      {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-      </DropdownButton> */}
+      <Dropdown>
+                <DropdownTrigger>
+                <img id="avatar" src={avatar} />
+                </DropdownTrigger>
+                <DropdownContent>
+                    <ul>
+                        <li>
+                            <a href="/myprofile">My Profile</a>
+                        </li>
+                        <li>
+                            <a href="/mydashboard">My Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/logout">Log Out</a>
+                        </li>
+                    </ul>
+                </DropdownContent>
+            </Dropdown>
     </div>
   );
 }
