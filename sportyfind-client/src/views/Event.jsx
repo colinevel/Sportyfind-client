@@ -8,7 +8,7 @@ import apiHandler from "../api/APIHandler";
 import UserContext from "./../auth/UserContext";
 
 // styles
-// Don't forget to add the css file
+import "../styles/event.css"
 
 React.createContext({
   currentUser: null,
@@ -22,13 +22,12 @@ export default function Event({ match }) {
 
   const [event, setEvent] = useState(null)
 
-  console.log(event)
-
   useEffect(() => {
 
     const getData = async () => {
       const eventRes = await apiHandler.get(`/events/${match.params.id}`);
       setEvent(eventRes.data);
+
     }
 
     getData()
@@ -36,17 +35,28 @@ export default function Event({ match }) {
   }, []);
 
   return (
-    <div className="">
-        <div className="">{event && event.name}</div>
-        <div className="">{event && event.sport}</div>
-        <div className="">{event && event.name}</div>
-        <div className="">{event && event.name}</div>
-        <div className="">{event && event.name}</div>
-        <div className="">{event && event.name}</div>
-        <div className="">{event && event.name}</div>
-        <div className="">{event && event.name}</div>
-        
-     
+    <div>
+    <div><h1 className="eventtitle">Event Details</h1></div>
+
+    <div className="eventdetails">
+        <div className="eventdescr">
+        <div className="details">Name of the event: {event && event.name}</div>
+        <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div>
+        <div className="details">Event Date&Hour: {event && event.date}</div>
+        <div className="details">Event's creator: {event && event.creator}</div>
+        <div className="details">Participants: {event && event.participants}</div>
+        <div className="details">Max participants: {event && event.maxParticipants}</div> 
+        </div>
+        <div className="googlemap">Google MAP</div>     
+      </div>
+
+      <div className="adminbuttons">
+    <button className="btndeleteevent"> Delete </button>
+    <button className="btnjoinevent"> Join </button>
+    <button className="btnleaveevent"> Leave </button>
+    <button className="btneditevent"> Edit </button>
+    </div>
+
       </div>
 
   );
