@@ -12,6 +12,7 @@ import UpdateEvent from "./views/UpdateEvent";
 import UpdateUser from "./views/UpdateUser";
 import User from "./views/User";
 import NotFound from "./views/NotFound";
+import Header from "./components/Header";
 
 
 // auth
@@ -40,7 +41,7 @@ export default function App() {
         null
       ) : (
         <React.Fragment>
-         
+        <Header />
           <main id="content_main">
             <Switch>
               <Route exact path="/" component={Home} />
