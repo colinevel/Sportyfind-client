@@ -37,18 +37,6 @@ export default withRouter(function CreateEvent({
       const sportsRes = await APIHandler.get(`/sports`);
       newState.sports = sportsRes.data.sports;
 
-    //   if (mode === "edit") {
-    //     const editEventRes = await APIHandler.get(`/events/edit/${_id}`, state);
-
-    //     // if (editEventRes.data.sport) editEventRes.data.sport = editEventRes.data.sport._id;
-
-    //     // Convert date
-    //     editEventRes.data.date =  new Date(editEventRes.data.date).toISOString().slice(0,10);
-
-    //     // Add the edited Album data on the newState Object
-    //     Object.assign(newState, editEventRes.data)
-    //   }
-
       setState(newState);
 
     };
@@ -82,7 +70,14 @@ export default withRouter(function CreateEvent({
 
 
   return (
+    
+    <div className="toute">
+
+    <p className="createevent">Create an event</p>
+
     <form className="form" onSubmit={handleSubmit} onChange={handleChange}>
+
+    <div className="all">
 
     <div className="nameinput">
     <label className="label" htmlFor="sport">
@@ -106,6 +101,7 @@ export default withRouter(function CreateEvent({
         id="name"
         type="text"
         defaultValue={state.name}
+        placeholder="Name"
         required
       />
       </div>
@@ -131,6 +127,7 @@ export default withRouter(function CreateEvent({
         id="maxParticipants"
         type="text"
         defaultValue={state.maxParticipants}
+        placeholder="10"
         required
       />
       </div>
@@ -145,6 +142,7 @@ export default withRouter(function CreateEvent({
         id="description"
         type="text"
         defaultValue={state.description}
+        placeholder="Description"
         required
       />
       </div>
@@ -158,6 +156,7 @@ export default withRouter(function CreateEvent({
         id="localisation"
         type="text"
         value={state.localisation}
+        placeholder="Localisation"
       />
       </div>
 
@@ -165,7 +164,11 @@ export default withRouter(function CreateEvent({
       <div className="nameinput">
     <button className="btn" disabled={state.isRequesting}> Create Event</button>
     </div>
+
+    </div>
+    
     </form>
+    </div>
 
   );
 

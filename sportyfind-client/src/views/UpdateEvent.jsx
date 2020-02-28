@@ -40,6 +40,14 @@ export default class UpdateEvent extends Component{
     }
 }
 
+handleChange = e => {
+    e.persist();
+    this.setState(prevValues => ({
+      ...prevValues,
+      [e.target.id]: e.target.value
+    }));
+  };
+
 componentDidMount() {
     APIHandler
             .get(`/events/${this.props.match.params.id}`)
@@ -56,8 +64,14 @@ componentDidMount() {
         }    
 render() {
   return (
+    <div className="toute">
+
+    <p className="createevent">Update an event</p>
+
     <form className="form" onSubmit={this.handleSubmit} onChange={this.handleChange}>
 
+    <div className="all">
+  
     <div className="nameinput">
     <label className="label" htmlFor="sport">
         Sport
@@ -139,7 +153,11 @@ render() {
       <div className="nameinput">
     <button className="btn" disabled={this.state.isRequesting}> Edit Event</button>
     </div>
+
+    </div>
+  
     </form>
+    </div>
 
     )}
 }
