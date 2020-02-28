@@ -34,8 +34,8 @@ select {
     justify-content: center;
     flex-direction: column;
     border: 5px solid  rgb(22, 97, 168);
-    outline: 5px solid rgb(255, 255, 0);
-    border-radius: 3vh;
+    outline: 5px solid rgb(255, 145, 0);
+    /* border-radius: 3vh; */
     margin-bottom: 2vh;
     padding: 5vh;
 }
@@ -51,11 +51,12 @@ select {
 .btn {
     background-color:  rgb(22, 97, 168);
     border-radius: 5vh;
-    border: 2px solid yellow;
+    border: 2px solid rgb(255, 145, 0);
     width: 50%;
     align-self: center;
     height: 4vh;
-    font-size: 1vw;
+    font-size: 1.5vw;
+    color: white;
 
 }
 
@@ -69,7 +70,7 @@ select {
 .createevent {
     font-size: 5vw;
     color: rgb(22, 97, 168);;
-    text-shadow:0 -4px 0 yellow, 0 -4px 0  rgb(22, 97, 168);;
+    text-shadow:0 -1px 0 rgb(255, 145, 0), 0 -4px 0  rgb(22, 97, 168);;
     
 }
 
