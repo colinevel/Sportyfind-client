@@ -6,6 +6,7 @@ import apiHandler from "../api/APIHandler";
 // import List from "../components/List";
 // import Stars from "../components/star/Stars";
 import UserContext from "./../auth/UserContext";
+import MapsContainer from "./../components/MapsContainer";
 
 import { Link } from "react-router-dom";
 
