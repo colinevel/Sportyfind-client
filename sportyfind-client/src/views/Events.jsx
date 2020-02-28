@@ -11,7 +11,7 @@ import apiHandler from "../api/APIHandler";
 export default class Events extends Component {
 
     state = {
-        filterBySport: "",
+        filterBySport: "All Sports",
         filterByCity: "",
         // filterByDate: "",
         sports: [],
@@ -27,12 +27,17 @@ export default class Events extends Component {
             .catch(apiErr => console.error(apiErr));
     }
 
+    componentDidUpdate() {
+
+    }
 
 
     eventsFiltered = () => {
+    
         return this.state.events.filter((p) => {
             if(this.state.filterBySport === "All Sports") {return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())}
-            else if (this.state.filterBySport !== p.sport) { return false }
+            else if (this.state.filterBySport !== p.sport._id)  return false;
+            
             return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())
         })
     }

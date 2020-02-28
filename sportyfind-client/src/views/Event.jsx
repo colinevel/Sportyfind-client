@@ -1,27 +1,37 @@
 import React, { useContext, useState, useEffect } from "react";
 // custom tools
 import apiHandler from "../api/APIHandler";
-// import CardAlbum from "../components/card/CardAlbum";
+// import Cardevent from "../components/card/Cardevent";
 // import Comments from "../components/comment/Comments";
 // import List from "../components/List";
 // import Stars from "../components/star/Stars";
 import UserContext from "./../auth/UserContext";
 
+import { Link } from "react-router-dom";
+
 // styles
-import "../styles/event.css"
+import "../styles/Event.css"
+
 
 React.createContext({
   currentUser: null,
   setCurrentUser: () => {}
 });
 
-export default function Event({ match }) {
+export default function Event({ match, history }) {
+    
+    
 
   const userContext = useContext(UserContext);
   const { currentUser } = userContext;
 
   const [event, setEvent] = useState(null)
 
+    const deleteEvent = async () => {
+      const eventRes = await apiHandler.delete("/events", match.params.id);
+      history.push("/events");
+    }
+ 
   useEffect(() => {
 
     const getData = async () => {
@@ -47,14 +57,16 @@ export default function Event({ match }) {
         <div className="details">Participants: {event && event.participants}</div>
         <div className="details">Max participants: {event && event.maxParticipants}</div> 
         </div>
+        <div className="details">Event's localisation: {event && event.localisation}</div>
         <div className="googlemap">Google MAP</div>     
       </div>
 
       <div className="adminbuttons">
-    <button className="btndeleteevent"> Delete </button>
+    <button className="btndeleteevent" onClick={deleteEvent}> Delete </button>
     <button className="btnjoinevent"> Join </button>
     <button className="btnleaveevent"> Leave </button>
-    <button className="btneditevent"> Edit </button>
+    <Link to={`/events/edit/${match.params.id}`}> <button className="btneditevent"> Edit </button>
+    </Link>
     </div>
 
       </div>

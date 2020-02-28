@@ -58,7 +58,7 @@ componentDidMount() {
     APIHandler
             .get("/sports")
             .then(apiRes => {
-                this.setState({ sports : apiRes.data.sports })
+                this.setState({ sports : apiRes.data.sports})
             })
             .catch(apiErr => console.error(apiErr));
         }    
@@ -76,12 +76,12 @@ render() {
     <label className="label" htmlFor="sport">
         Sport
       </label>
-      <select id="sport" value={this.state.sport} > 
+      <select id="sport" value={this.state.sport._id} > 
           <option value="" disabled>
         Select a sport</option>
-        {this.state.sports.map((sport, i) => (
-          <option value={sport._id} key={i}>{sport.name}</option>
-        ))}
+        {this.state.sports.map((sport, i) => {
+          return <option value={sport._id} key={i}>{sport.name}</option>
+        })}
       </select>
       </div>
 

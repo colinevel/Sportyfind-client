@@ -3,6 +3,7 @@ import React from 'react'
 
 
 export default function FilterBar({ clbk,sports }) {
+    console.log("this is spôrts", sports)
     return (
         <div>
             <div>Filter BAR</div>
