@@ -6,6 +6,7 @@ import apiHandler from "../api/APIHandler";
 // import List from "../components/List";
 // import Stars from "../components/star/Stars";
 import UserContext from "./../auth/UserContext";
+import MapsContainer from "./../components/MapsContainer";
 
 // styles
 import "../styles/event.css"
@@ -47,7 +48,9 @@ export default function Event({ match }) {
         <div className="details">Participants: {event && event.participants}</div>
         <div className="details">Max participants: {event && event.maxParticipants}</div> 
         </div>
-        <div className="googlemap">Google MAP</div>     
+        <div className="googlemap">
+        <MapsContainer />
+        </div>     
       </div>
 
       <div className="adminbuttons">
