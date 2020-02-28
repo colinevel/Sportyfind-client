@@ -7,7 +7,7 @@ export default function EventsCard({event}) {
         <div className="card event">
             {/* <div>{event.date}</div> */}
             <div>{event.name}</div>
-            <div>{event.sport}</div>
+            <div>{event.sport}</div> 
             <div>localisation : {event.localisation}</div>
             {/* <div>creator : {event.creator.username}</div> */}
     <div>remaining places : <span>{remainingPlaces}</span></div>
