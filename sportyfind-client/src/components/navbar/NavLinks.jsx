@@ -13,6 +13,9 @@ export default function NavLinks() {
       <NavLink className="link" activeClassName="is-active" to="/signin">
         LOG IN
       </NavLink>
+      <NavLink className="link" activeClassName="is-active" to="/users/:id">
+        My profile
+      </NavLink>
     </div>
   );
 }

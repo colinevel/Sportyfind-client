@@ -26,7 +26,7 @@ export default function Avatar() {
     <div>
       <Dropdown>
                 <DropdownTrigger>
-                <img id="avatar" src={avatar} />
+                <img id="avatar" src={avatar} alt="avatar" />
                 </DropdownTrigger>
                 <DropdownContent>
                     <ul>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 import EventsCard from "../components/EventsCard";
 
 export default function EventsCards({ events }) {
