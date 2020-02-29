@@ -4,10 +4,6 @@ import FilterBar from "../components/FilterBar";
 import apiHandler from "../api/APIHandler";
 
 
-
-
-
-
 export default class Events extends Component {
 
     state = {
@@ -55,10 +51,9 @@ export default class Events extends Component {
     render() {
         return (
             <div>
-                navBar
-                <hr />
+                {/* <hr /> */}
                 <FilterBar clbk={this.onFilterBarUpdate} sports={this.state.sports}/>
-                <hr />
+                {/* <hr /> */}
                 <CardsList events={this.eventsFiltered()} />
             </div>
         )

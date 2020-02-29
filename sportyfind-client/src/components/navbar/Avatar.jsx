@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import apiHandler from "./../../api/APIHandler";
-import avatar from "./../../styles/avatar.css";
+//style
+import "../../styles/header.css";
 var Dropdown = require('react-simple-dropdown');
 var DropdownTrigger = Dropdown.DropdownTrigger;
 var DropdownContent = Dropdown.DropdownContent;
+
+
 
 
 export default function Avatar() {

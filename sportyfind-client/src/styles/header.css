@@ -1,7 +1,35 @@
 #header {
-    height: 10%;
+    height: 8vh;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    background-color: lightblue;
+    background-color: white;
+    align-items: center;
+    box-shadow: 0px 1px 6px grey;
 }
+
+.navavatar {
+    display: flex;
+    margin-right: 1vw;
+}
+
+.navlink {
+    display: flex;
+    width: 35vw;
+    justify-content: space-around;
+}
+
+.navlink a {
+    color: black;
+    text-decoration: none;
+}
+
+.navlink a:hover {
+    color: royalblue;
+}
+
+.headeravatar {
+    margin-left: 2vw;
+
+}
+
+

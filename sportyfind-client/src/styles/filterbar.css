@@ -1,0 +1,31 @@
+.searchbar {
+    border: 3px solid blue;
+    padding: 1vw;
+    height: 3vh;
+    outline: none;
+    margin-left: 2vw;
+    margin-bottom: -1vh;
+}
+
+.filterbartitle{
+    display: flex;
+    justify-content: center;
+    font-size: 4vw;
+    margin-bottom: 1vw;
+}
+
+.filtersports {
+    border: 3px blue solid;
+    width: 15vw;
+}
+
+.allfilterbar {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
