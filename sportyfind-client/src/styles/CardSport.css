@@ -1,7 +1,7 @@
 .card {
     width: 25vw;
     height: 30vh;
-    border: 2px solid grey;
+    /* border: 2px solid grey; */
     border-top-left-radius: 1vw; 
     border-top-right-radius: 1vw;
     /* padding-left: 2vw; */
@@ -32,4 +32,13 @@
 .alllist {
     display: flex;
     justify-content: center;
+}
+
+h2 {
+    font-size: 4vw;
+    color: black;
+}
+
+a {
+    text-decoration: none;
 }
