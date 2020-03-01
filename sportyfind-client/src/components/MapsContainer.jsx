@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 
 export class MapsContainer extends Component {
+
+  state = {
+    lat: "",
+    lng: ""
+  };
+
   render() {
     if (!this.props.loaded) {
       return <div>Loading...</div>;
@@ -22,9 +28,9 @@ export class MapsContainer extends Component {
         }}
       >
         <Marker
-          title={"The marker`s title will appear as a tooltip."}
-          name={"SOMA"}
-          position={{ lat: 37.778519, lng: -122.40564 }}
+          name={"Location"}
+          // position={{ lat: 37.778519, lng: -122.40564 }}
+          position= {this.state.lat, this.state.lng}
         />
       </Map>
     );

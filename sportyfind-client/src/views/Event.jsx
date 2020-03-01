@@ -11,7 +11,7 @@ import MapsContainer from "./../components/MapsContainer";
 import { Link } from "react-router-dom";
 
 // styles
-import "../styles/Event.css"
+import "../styles/event.css"
 
 
 React.createContext({
@@ -59,7 +59,9 @@ export default function Event({ match, history }) {
         <div className="details">Max participants: {event && event.maxParticipants}</div> 
         </div>
         <div className="details">Event's localisation: {event && event.localisation}</div>
-        <div className="googlemap">Google MAP</div>     
+        <div className="googlemap">
+        <MapsContainer />
+        </div>     
       </div>
 
       <div className="adminbuttons">

@@ -12,7 +12,6 @@ export default function SportsCard({sport}) {
             <div className="sportname">
             <h2>{sport.name}</h2>
             </div>
-            <hr></hr>
             <div className="sportimage">
             <img src={sport.image} />
             </div>

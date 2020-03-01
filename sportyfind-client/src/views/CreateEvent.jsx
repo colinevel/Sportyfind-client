@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
-import 'react-google-places-autocomplete/dist/assets/index.css';
+// import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+// import 'react-google-places-autocomplete/dist/assets/index.css';
+
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
+
 
 
 
@@ -50,6 +54,7 @@ export default withRouter(function CreateEvent({
     getData();
 
   }, [mode, _id]);
+
 
   const handleChange = e => {
     e.persist();
@@ -116,12 +121,8 @@ export default withRouter(function CreateEvent({
         <label className="label" htmlFor="date">
         Date
       </label>
-      <input
-        className="input"
-        id="date"
-        type="datetime-local"
-        value={state.date}
-      />
+      <DayPickerInput onDayChange={day => console.log("this is the new day", day)} className="input" id="date"
+        value={state.date} />
       </div>
 
         <div className="nameinput">
@@ -166,7 +167,7 @@ export default withRouter(function CreateEvent({
       />
       </div>
 
-  <div>
+  {/* <div>
     <GooglePlacesAutocomplete
       onSelect={console.log}
       autocompletionRequest={{
@@ -176,7 +177,7 @@ export default withRouter(function CreateEvent({
     }}
 
     />
-  </div>
+  </div> */}
 
 
       <div className="nameinput">
