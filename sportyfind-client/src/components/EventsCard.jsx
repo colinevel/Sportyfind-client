@@ -8,8 +8,10 @@ import "../styles/eventscard.css"
 export default function EventsCard({event}) {
     var remainingPlaces = event.maxParticipants - event.participants.length;
     return (
-        <div className="card event">
 
+        <div className="cardOfevent" >
+         <img className="backimg" src={event.sport.image} alt=""/>
+        
             <div className="eventdate">
                 <div >{event.date}</div>
             </div>
@@ -21,10 +23,13 @@ export default function EventsCard({event}) {
             <div>localisation : {event.localisation}</div>
             {/* <div>creator : {event.creator.username}</div> */}
             <div>remaining places : <span>{remainingPlaces}</span></div>
-            <Link to={`/events/${event._id}`}>see more</Link>
-            
-        <div>join</div>
+            <div className="seemoreandjoin">
+
+            <Link className="seemore" to={`/events/${event._id}`}>see more</Link>
+            <div className="join">join</div></div>
+           
         </div>
+        
         </div>
     )
 }

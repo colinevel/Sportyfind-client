@@ -105,7 +105,7 @@ render() {
       <input
         className="input"
         id="date"
-        type="datetime-local"
+        type="date"
         value={this.state.date}
       />
       </div>

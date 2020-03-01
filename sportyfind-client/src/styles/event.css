@@ -1,3 +1,4 @@
+
 .eventdetails{
     display: flex;
     margin-top: 8vh;
@@ -7,6 +8,9 @@
 
 .details {
     font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
 }
 
 .eventdescr {
@@ -59,4 +63,8 @@
     font-size: 3vw;
     background-color: greenyellow;
     border-radius: 4vw;
+}
+
+.googlemap {
+    margin-top: 3vh;
 }
