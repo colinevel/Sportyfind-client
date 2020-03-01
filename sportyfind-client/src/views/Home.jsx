@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SportsList from "./../components/SportsList";
-import Header from "./../components/Header";
-
 import apiHandler from "../api/APIHandler";
-import { Link } from "react-router-dom";
 
 export default function Home() {
   const [sports, setSport] = useState(null);

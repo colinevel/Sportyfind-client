@@ -1,0 +1,39 @@
+.event {
+    width: 25vw;
+    height: 30vh;
+    border: 2px solid grey;
+    border-radius: 1vw;
+    /* padding-left: 2vw; */
+    padding-top: 3vh;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: -2vh;
+}
+
+.allcards{
+display: flex;
+justify-content: center;
+}
+
+.eventdate {
+    display: flex;
+    /* border-bottom: 5px solid black; */
+    justify-content: center;
+}
+
+.separation {
+    border-bottom: 3px solid black;
+}
+
+.information {
+    padding-left:2vw;
+}

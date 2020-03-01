@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+//style
+import "../../styles/header.css";
+
 export default function NavLinks() {
   return (
-    <div>
+    <div className="navlink">
       <NavLink className="link" activeClassName="is-active" to="/events">
         All Events
       </NavLink>
@@ -15,6 +18,9 @@ export default function NavLinks() {
       </NavLink>
       <NavLink className="link" activeClassName="is-active" to="/signin">
         LOG IN
+      </NavLink>
+      <NavLink className="link" activeClassName="is-active" to="/users/:id">
+        My profile
       </NavLink>
     </div>
   );

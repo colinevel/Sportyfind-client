@@ -4,14 +4,10 @@ import FilterBar from "../components/FilterBar";
 import apiHandler from "../api/APIHandler";
 
 
-
-
-
-
 export default class Events extends Component {
 
     state = {
-        filterBySport: "",
+        filterBySport: "All Sports",
         filterByCity: "",
         // filterByDate: "",
         sports: [],
@@ -27,12 +23,17 @@ export default class Events extends Component {
             .catch(apiErr => console.error(apiErr));
     }
 
+    componentDidUpdate() {
+
+    }
 
 
     eventsFiltered = () => {
+    
         return this.state.events.filter((p) => {
             if(this.state.filterBySport === "All Sports") {return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())}
-            else if (this.state.filterBySport !== p.sport) { return false }
+            else if (this.state.filterBySport !== p.sport._id)  return false;
+            
             return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())
         })
     }
@@ -50,10 +51,9 @@ export default class Events extends Component {
     render() {
         return (
             <div>
-                navBar
-                <hr />
+                {/* <hr /> */}
                 <FilterBar clbk={this.onFilterBarUpdate} sports={this.state.sports}/>
-                <hr />
+                {/* <hr /> */}
                 <CardsList events={this.eventsFiltered()} />
             </div>
         )
