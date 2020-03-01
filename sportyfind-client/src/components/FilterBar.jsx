@@ -1,11 +1,19 @@
-import React from 'react'
 // styles
 import "../styles/filterbar.css"
+import React from 'react';
+import Calendar from "./Calendar";
 
+// styles
+import "../styles/filterbar.css";
+import 'react-day-picker/lib/style.css';
 
 
 export default function FilterBar({ clbk,sports }) {
     console.log("this is spôrts", sports)
+
+    // const [calendar, setCalendar] = useState(null);
+    // const handleClick = e => 
+    
     return (
         <div className="allfilterbar">
             <div className="filterbartitle">All Events</div>
@@ -28,7 +36,7 @@ export default function FilterBar({ clbk,sports }) {
 
                 <input onChange={(e) => clbk('search', e.target.value)} className="searchbar" type="text" placeholder="enter city" />
 
-
+                <Calendar />
                 {/* <input onChange={(e) => clbk('date', e.target.value)} className="research-date" type="date" /> */}
 
 
