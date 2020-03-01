@@ -8,16 +8,11 @@
     /* padding-top: 3vh;
     margin-top: 2vh;  */
     margin-left: 2vw;
-<<<<<<< HEAD
     margin-bottom: 18vh;
-=======
-    margin-bottom: 15vh;
-    
 }
 
 .card:hover {
     transform: scale(1.05);
->>>>>>> 37496a6f3ef830baa4a0ba0a80c82d2eb4f23be9
 }
 
 .list {
