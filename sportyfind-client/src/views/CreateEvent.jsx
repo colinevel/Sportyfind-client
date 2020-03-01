@@ -166,7 +166,7 @@ export default withRouter(function CreateEvent({
       />
       </div>
 
-  <div>
+  {/* <div>
     <GooglePlacesAutocomplete
       onSelect={console.log}
       autocompletionRequest={{
@@ -176,7 +176,7 @@ export default withRouter(function CreateEvent({
     }}
 
     />
-  </div>
+  </div> */}
 
 
       <div className="nameinput">
