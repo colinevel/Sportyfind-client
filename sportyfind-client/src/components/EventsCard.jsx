@@ -8,8 +8,9 @@ import "../styles/eventscard.css"
 export default function EventsCard({event}) {
     var remainingPlaces = event.maxParticipants - event.participants.length;
     return (
-        <div className="card event">
-
+        <div className="card event" style={{backgroundImage: `url(${event.sport.image})` }}>
+        
+        
             <div className="eventdate">
                 <div >{event.date}</div>
             </div>
