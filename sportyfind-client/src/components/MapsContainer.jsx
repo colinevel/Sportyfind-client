@@ -7,8 +7,8 @@ export class MapsContainer extends Component {
       return <div>Loading...</div>;
     }
     const mapStyles = {
-      width: "60%",
-      height: "60%"
+      width: "80%",
+      height: "80%"
     };
 
     return (

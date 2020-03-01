@@ -1,34 +1,34 @@
-.event {
+.cardOfevent {
     width: 25vw;
-    height: 30vh;
-    border: 2px solid grey;
-    border-radius: 1vw;
+    height: 35.4vh;
+    /* border: 2px solid grey; */
+    /* border-radius: 1vw; */
     /* padding-left: 2vw; */
     padding-top: 3vh;
     margin-left: 2vw;
     margin-top: 2vh;
     position: relative;
+
 }
 
-.card:hover {
-    transform: scale(1.1);
-}
-
-img {
+/* img {
     max-width: 100%;
     max-height: 100%;
     margin-top: -2vh;
-}
+} */
 
 .allcards{
-display: flex;
-justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2vw;
+    grid-auto-rows: minmax(100px, 319px);
 }
 
 .eventdate {
     display: flex;
     /* border-bottom: 5px solid black; */
     justify-content: center;
+    
 }
 
 .separation {
@@ -37,8 +37,124 @@ justify-content: center;
 
 .information {
     padding-left:2vw;
-    color: white;
+    color: black;
     font-size: larger;
     font-weight: bold;
+    position: relative;
 }
 
+.allevents2 {
+    display: flex;
+    justify-content: center;
+}
+
+.seemore {
+    width: 10vw;
+    height: 6vh;
+    border: 1px solid blue;
+    color: white;
+    background-color: blue;
+    border-radius: 2vw;
+    font-size: 4vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.join {
+    width: 10vw;
+    height: 6vh;
+    border: 1px solid orange;
+    color: white;
+    background-color: orange;
+    border-radius: 2vw;
+    font-size: 4vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.seemoreandjoin {
+    display: flex;
+    margin-left: -2vw;
+    margin-top: 1vh;
+    justify-content: space-evenly;
+    
+}
+
+.backimg {
+    opacity: 0.25;
+    position: absolute;
+    margin-top: -2vh;
+}
+
+@media only screen and (max-width: 768px) {
+    .allcards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2vw;
+        grid-auto-rows: minmax(100px, 350px);
+    }
+
+    .backimg {
+        opacity: 0.5;
+        margin-top: -2vh;
+    }
+
+    .information {
+        color: black;
+        font-size: 2vw;
+        font-weight: bold;
+        position: relative;
+        margin-top: 7vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .seemoreandjoin {
+        display: flex;
+        margin-left: -2vw;
+        margin-top: 1vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        
+        
+    }
+
+    .seemore {
+        width: 22vw;
+        height: 6vh;
+        border: 1px solid blue;
+        color: white;
+        background-color: blue;
+        border-radius: 2vw;
+        font-size: 2.5vh;
+        display: flex;
+        justify-content: center;
+        /* position: relative; */
+        align-content: center;
+    }
+    
+    .join {
+        width: 22vw;
+        height: 6vh;
+        border: 1px solid orange;
+        color: white;
+        background-color: orange;
+        border-radius: 2vw;
+        font-size: 2.5vh;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .cardOfevent {
+        width: 25vw;
+        height: 120.4vh;
+        padding-top: 3vh;
+        margin-left: 2vw;
+        margin-top: 2vh;
+        position: relative;
+    
+    }
+  }

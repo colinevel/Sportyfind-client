@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
+import Moment from 'moment';
 
 // custom tools
 import APIHandler from "../api/APIHandler";
@@ -113,7 +114,7 @@ export default withRouter(function CreateEvent({
       <input
         className="input"
         id="date"
-        type="datetime-local"
+        type="date"
         value={state.date}
       />
       </div>
