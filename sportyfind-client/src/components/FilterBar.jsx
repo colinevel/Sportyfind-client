@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+import React from 'react';
+=======
 import React from 'react'
 // styles
 import "../styles/filterbar.css"
+>>>>>>> b35a4057e5ae4dde8f007d930b1e4e22097c651d
 
 
 

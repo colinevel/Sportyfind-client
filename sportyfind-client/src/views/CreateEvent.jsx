@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import Moment from 'moment';
+// import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
+// import 'react-google-places-autocomplete/dist/assets/index.css';
+
+
 
 // custom tools
 import APIHandler from "../api/APIHandler";
 
 // styles
 import "../styles/CreateEvent.css"
+// const APIKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+// <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 
 
 export default withRouter(function CreateEvent({
@@ -161,6 +166,18 @@ export default withRouter(function CreateEvent({
       />
       </div>
 
+  <div>
+    <GooglePlacesAutocomplete
+      onSelect={console.log}
+      autocompletionRequest={{
+      componentRestrictions: {
+        country: ['fr'],
+      }
+    }}
+
+    />
+  </div>
+
 
       <div className="nameinput">
     <button className="btn" disabled={state.isRequesting}> Create Event</button>
@@ -174,4 +191,8 @@ export default withRouter(function CreateEvent({
   );
 
 });
+
+// scriptLoader(['https://maps.googleapis.com/maps/api/js?key=AIzaSyA7z4NnofrdbUYkO8tXJq2UtaJF3LyNklU'])(withRouter);
+
+// module export = scriptLoader;
 
