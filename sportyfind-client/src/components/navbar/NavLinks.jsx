@@ -10,6 +10,9 @@ export default function NavLinks() {
       <NavLink className="link" activeClassName="is-active" to="/events/create">
         Create Events
       </NavLink>
+      <NavLink className="link" activeClassName="is-active" to="/users/dashboard">
+        My Dashboard
+      </NavLink>
       <NavLink className="link" activeClassName="is-active" to="/signin">
         LOG IN
       </NavLink>
