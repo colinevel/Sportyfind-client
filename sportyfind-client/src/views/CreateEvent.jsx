@@ -43,6 +43,7 @@ export default withRouter(function CreateEvent({
 
       const sportsRes = await APIHandler.get(`/sports`);
       newState.sports = sportsRes.data.sports;
+      
 
       setState(newState);
     };
