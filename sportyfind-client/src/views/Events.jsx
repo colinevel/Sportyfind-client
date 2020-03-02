@@ -5,16 +5,19 @@ import apiHandler from "../api/APIHandler";
 
 
 export default class Events extends Component {
-
+  
     state = {
-        filterBySport: "All Sports",
+        filterBySport: this.props.history.location.search.replace("?sport=", ""),
         filterByCity: "",
         // filterByDate: "",
+        test: this.props,
         sports: [],
         events: []
     }
 
     componentDidMount() {
+        console.log();
+        
 
         Promise.all([apiHandler.get("/sports"), apiHandler.get("/events")])
             .then(apiRes => {
@@ -31,8 +34,8 @@ export default class Events extends Component {
     eventsFiltered = () => {
     
         return this.state.events.filter((p) => {
-            if(this.state.filterBySport === "All Sports") {return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())}
-            else if (this.state.filterBySport !== p.sport._id)  return false;
+            if(this.state.filterBySport === "AllSports") {return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())}
+            else if (this.state.filterBySport !== p.sport.name)  return false;
             
             return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())
         })
@@ -49,10 +52,11 @@ export default class Events extends Component {
 
 
     render() {
+        
         return (
             <div>
                 {/* <hr /> */}
-                <FilterBar clbk={this.onFilterBarUpdate} sports={this.state.sports}/>
+                <FilterBar clbk={this.onFilterBarUpdate} filter={this.state.filterBySport} sports={this.state.sports}/>
                 {/* <hr /> */}
                 <CardsList events={this.eventsFiltered()} />
             </div>

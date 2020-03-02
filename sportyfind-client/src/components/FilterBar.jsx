@@ -6,8 +6,7 @@ import "../styles/filterbar.css";
 import 'react-day-picker/lib/style.css';
 
 
-export default function FilterBar({ clbk,sports }) {
-    console.log("this is spôrts", sports)
+export default function FilterBar({ clbk,sports, filter }) {
 
     // const [calendar, setCalendar] = useState(null);
     // const handleClick = e => 
@@ -16,12 +15,12 @@ export default function FilterBar({ clbk,sports }) {
         <div className="allfilterbar">
             <div className="filterbartitle">All Events</div>
             <div className="filters">
-                <select onChange={(e) => clbk('sport', e.target.value)} className="filtersports">
-                    <option value="All Sports"
+                <select value={filter} onChange={(e) => clbk('sport', e.target.value)} className="filtersports" >
+                    <option value="AllSports"
                     >All Sports</option>
                     {/* <select name="sport" id="sport" value={clbk.sport}> */}
                     {sports.map((sport, i) => (
-                        <option key={i} value={sport._id}
+                        <option key={i} value={sport.name}
                         >{sport.name}</option>
                     ))}
 

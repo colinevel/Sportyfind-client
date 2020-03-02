@@ -17,7 +17,6 @@ export default function Avatar() {
       .get(`/users`)
       .then(res => {
         setAvatar(res.data.users.avatar);
-        console.log("this is the avatar", res.data.users);
       })
       .catch(err => {
         console.error(err);
