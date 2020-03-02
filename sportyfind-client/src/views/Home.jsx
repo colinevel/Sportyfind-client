@@ -10,7 +10,6 @@ export default function Home() {
       .get(`/sports`)
       .then(res => {
         setSport(res.data.sports);
-        console.log(res.data.sports);
       })
       .catch(err => {
         console.error(err);

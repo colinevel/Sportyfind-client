@@ -4,6 +4,7 @@ import FilterBar from "../components/FilterBar";
 import apiHandler from "../api/APIHandler";
 
 
+
 export default class Events extends Component {
   
     state = {
@@ -16,7 +17,6 @@ export default class Events extends Component {
     }
 
     componentDidMount() {
-        console.log();
         
 
         Promise.all([apiHandler.get("/sports"), apiHandler.get("/events")])

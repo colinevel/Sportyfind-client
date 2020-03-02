@@ -26,10 +26,24 @@
 
 .filters {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 #calendar-icon {
     height: 6vh;
+}
+
+.calendar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.datePicker{
+    margin-left: 3vw;
+}
+
+.not-visible{
+    visibility: hidden;
 }

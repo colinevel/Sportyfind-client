@@ -32,7 +32,6 @@ export default class Signup extends Component {
 
         try {
             await APIHandler.post("/signup", fd);
-            console.log("ok");
 
             this.props.history.push("/signin");
         } catch (err) {
@@ -45,7 +44,6 @@ export default class Signup extends Component {
     };
 
     handleImage = e => {
-        // console.log("Signup@handle image", e.target.files[0]);
         this.setState({ avatar: e.target.files[0] }, () => {
             const reader = new FileReader();
             reader.onloadend = () => {

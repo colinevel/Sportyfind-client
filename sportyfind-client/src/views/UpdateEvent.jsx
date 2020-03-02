@@ -1,5 +1,9 @@
 import React, { useState, useEffect, Component } from "react";
 import { withRouter } from "react-router-dom";
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+import "react-google-places-autocomplete/dist/assets/index.css";
+import { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+
 
 // custom tools
 import APIHandler from "../api/APIHandler";
@@ -46,6 +50,14 @@ export default class UpdateEvent extends Component{
     }
 }
 
+handleAddressChange = e => {
+  console.log(e.description);
+  this.setState(prevValues => ({
+    ...prevValues,
+    localisation: e.description
+  }));
+};
+
 handleChange = e => {
     e.persist();
     this.setState(prevValues => ({
@@ -53,6 +65,18 @@ handleChange = e => {
       [e.target.id]: e.target.value
     }));
   };
+
+  // geocodeByAddress = (this.state.localisation) => {
+  //   .then(results => getLatLng(results[0]))
+  //   .then(({ lat, lng }) => {
+  //   this.setState(prevValues => ({
+  //     ...prevValues,
+  //     lat: lat,
+  //     lng: lng
+  //   }));
+  //   console.log('Successfully got latitude and longitude', { lat, lng })
+  // }
+  // );
 
 componentDidMount() {
     APIHandler
@@ -74,7 +98,7 @@ render() {
 
     <p className="createevent">Update an event</p>
 
-    <form className="form" onSubmit={this.handleSubmit} onChange={this.handleChange}>
+    <form className="form" onSubmit={this.handleSubmit}>
 
     <div className="all">
   
@@ -82,7 +106,7 @@ render() {
     <label className="label" htmlFor="sport">
         Sport
       </label>
-      <select id="sport" value={this.state.sport._id} > 
+      <select id="sport" value={this.state.sport._id} onChange={this.handleChange}> 
           <option value="" disabled>
         Select a sport</option>
         {this.state.sports.map((sport, i) => {
@@ -96,6 +120,7 @@ render() {
         Name
       </label>
       <input
+        onChange={this.handleChange}
         className="input"
         id="name"
         type="text"
@@ -109,6 +134,7 @@ render() {
         Date
       </label>
       <input
+        onChange={this.handleChange}
         className="input"
         id="date"
         type="date"
@@ -116,11 +142,26 @@ render() {
       />
       </div>
 
+      <div className="nameinput">
+            <label className="label" htmlFor="time">
+              Time
+            </label>
+            <input
+              onChange={this.handleChange}
+              className="input"
+              id="time"
+              type="time"
+              defaultValue={this.state.time}
+              placeholder="00:00"
+            />
+          </div>
+
         <div className="nameinput">
     <label className="label" htmlFor="maxParticipants">
         Maximum number of participants
       </label>
       <input
+        onChange={this.handleChange}
         className="input"
         id="maxParticipants"
         type="text"
@@ -128,13 +169,12 @@ render() {
         required
       />
       </div>
-      
-
         <div className="nameinput">
         <label className="label" htmlFor="description">
         Description
       </label>
       <input
+        onChange={this.handleChange}
         className="input"
         id="description"
         type="text"
@@ -143,17 +183,23 @@ render() {
       />
       </div>
 
-<div className="nameinput">
-    <label className="label" htmlFor="localisation">
-        Localisation 
-      </label>
-      <input
-        className="input"
-        id="localisation"
-        type="text"
-        defaultValue={this.state.localisation}
-      />
-      </div>
+      <div className="nameinput">
+            <label className="label" htmlFor="localisation">
+              Localisation</label>
+            <GooglePlacesAutocomplete
+              inputClassName="input"
+              id="localisation"
+              type="text"
+              onSelect={this.handleAddressChange}
+              placeholder="Localisation"
+              initialValue={this.state.localisation}
+              autocompletionRequest={{
+                componentRestrictions: {
+                  country: ["fr"]
+                }
+              }}
+            />
+          </div>
 
 
       <div className="nameinput">

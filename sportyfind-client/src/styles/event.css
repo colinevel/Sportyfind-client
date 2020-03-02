@@ -68,3 +68,8 @@
 .googlemap {
     margin-top: 3vh;
 }
+
+.googlemap > div > div {
+    height: 40vh !important;
+    width: 50vw;
+}

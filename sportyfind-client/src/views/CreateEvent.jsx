@@ -26,7 +26,7 @@ export default withRouter(function CreateEvent({
     date: "",
     time: "",
     lat: "",
-    lang: "",
+    lng: "",
     localisation: "",
     maxParticipants: "",
     description: "",
@@ -51,12 +51,15 @@ export default withRouter(function CreateEvent({
     getData();
   }, [mode, _id]);
 
-
-  const handleAddressChange = e => {
-    console.log(e.description);
-    setState({...state, localisation: e.description })
+  const handleDayChange = e => {
+    console.log("youhou", e);
+    setState({...state, date: e})
   };
 
+  const handleAddressChange = e => {
+    // console.log(e.description);
+    setState({...state, localisation: e.description })
+  };
 
   const handleChange = e => {
     e.persist();
@@ -67,7 +70,6 @@ export default withRouter(function CreateEvent({
   .then(results => getLatLng(results[0]))
   .then(({ lat, lng }) =>{
     setState({...state, lat: lat, lng: lng})
-    console.log('Successfully got latitude and longitude', { lat, lng })
   }
   );
 
@@ -80,7 +82,10 @@ export default withRouter(function CreateEvent({
         const apiResult = await APIHandler.post("/events/create", state);
       } else await APIHandler.patch(`/events/edit/${match.params.id}`, state);
 
-      history.push("/events");
+      history.push({
+        pathname: '/events',
+        search: '?sport=AllSports'
+    });
     } catch (apiErr) {
       console.error(apiErr);
     }
@@ -129,7 +134,8 @@ export default withRouter(function CreateEvent({
               Date
             </label>
             <DayPickerInput
-              onDayChange={day => console.log("this is the new day", day)}
+              onDayChange={handleDayChange}
+              // onDayChange={day => console.log("this is the new day", day)}
               className="input"
               id="date"
               value={state.date}
@@ -211,6 +217,3 @@ export default withRouter(function CreateEvent({
   );
 });
 
-// scriptLoader(['https://maps.googleapis.com/maps/api/js?key=AIzaSyA7z4NnofrdbUYkO8tXJq2UtaJF3LyNklU'])(withRouter);
-
-// module export = scriptLoader;

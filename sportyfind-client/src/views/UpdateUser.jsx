@@ -9,16 +9,6 @@ export default function UpdateUser(props) {
     const { isLoading, currentUser } = useAuth();
 
 
-console.log(props)
-    // const [newAvatarTmp, setAvatarTmp] = useState("");
-    // const [newEmail, setEmail] = useState(currentUser ? currentUser.email : "");
-    // const [newUsername, setUsername] = useState("");
-    // const [newFirstName, setFirstName] = useState("");
-    // const [newLastName, setLastName] = useState("");
-    // const [newCity, setCity] = useState("");
-    // const [newPassword, setNewPassword] = useState("654654");
-    // const [oldPassword, setOldPassword] = useState("654654");
-
     const [{ avatarTmp,
         email,
         username,
