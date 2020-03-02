@@ -20,8 +20,6 @@ React.createContext({
 });
 
 export default function Event({ match, history }) {
-    
-    
 
   const userContext = useContext(UserContext);
   const { currentUser } = userContext;
@@ -37,6 +35,7 @@ export default function Event({ match, history }) {
 
     const getData = async () => {
       const eventRes = await apiHandler.get(`/events/${match.params.id}`);
+      console.log("this is my data", eventRes.data.lng);
       setEvent(eventRes.data);
 
     }
@@ -58,10 +57,11 @@ export default function Event({ match, history }) {
         <div className="details">Participants: {event && event.participants}</div>
         <div className="details">Max participants: {event && event.maxParticipants}</div> 
         </div>
-        <div className="details">Event's localisation: {event && event.localisation}</div>
-        <div className="googlemap">
-        <MapsContainer />
-        </div>     
+        <div className="details">Event's localisation: {event && event.localisation}
+          <div className="googlemap">
+          {event &&  <MapsContainer lat={event.lat} lng={event.lng}/>}
+          </div>
+        </div>    
       </div>
 
       <div className="adminbuttons">
