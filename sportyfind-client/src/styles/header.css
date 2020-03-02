@@ -1,11 +1,11 @@
-#header {
+ /* .header {
     height: 8vh;
     display: flex;
     justify-content: space-between;
     background-color: white;
     align-items: center;
     box-shadow: 0px 1px 6px blue;
-}
+} 
 
 .navavatar {
     display: flex;
@@ -30,6 +30,223 @@
 .headeravatar {
     margin-left: 2vw;
 
+} */
+
+
+  /* a {
+    text-decoration: none;
+  }
+  
+  /* -- Start Hamburger Menu Code -- */
+  
+  /* header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0px 1px 6px blue;
+  }
+  
+  .hamburger {
+    height: 20px;
+    width: 20px;
+    padding: 20px;
+    float: right;
+    cursor: pointer;
+  }
+  .hamburger:before {
+    content: "";
+    display: block;
+    background-color: black;
+
+  }
+  .hamburger:after {
+    display: block;
+    color: black;
+    box-shadow: 0px 8px 0 black;
+    content: "☰";
+    font-size: 4vh;
+    margin-top: -3vh;
+    margin-left: 23vh;
+  }
+  
+  nav {
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    clear:both;
+    transition: max-height .3s cubic-bezier(0.63, 0, 0.25, 1);;
+  }
+
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+  }
+  nav li {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+  nav a {
+    color: black;
+    display: block;
+    padding: .4em;
+  }
+  
+  header input[type="checkbox"]:checked ~ nav {
+    max-height: 45vh; */
+    /* margin-top: 6vh;
+    margin-right: 2vw; */
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  /* @media only screen and (min-width: 768px) {
+    .hamburger {
+      display: none;
+      position: absolute;
+    }
+
+    nav {
+      background: transparent;
+      float: right;
+      border: 0 !important;
+      max-height: none;
+    }
+    nav ul, nav li, nav li a {
+      display: inline-block;
+    }
+    
+    nav a {
+      display: inline-block;
+  }
+  }
+
+  .hidden {
+    position: fixed;
+    top: -100%;
+    left: -100%;
+  } */
+
+  .logo {
+      float: left;
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex {
+      display: flex;
+  }
+
+   header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 1px 6px blue;
+  }
+  
+  .hamburger {
+    height: 20px;
+    width: 20px;
+    padding: 20px;
+    float: right;
+    cursor: pointer;
+  }
+  .hamburger:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+  }
+  .hamburger:after {
+    content: "☰";
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: -13px;
+    box-shadow: 0px 8px 0 #f3f3f3;
+  }
+  
+.hamburgerAndAvatarContainer{
+    display: flex;
 }
 
+  nav {
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    clear:both;
+    transition: max-height .3s cubic-bezier(0.63, 0, 0.25, 1);;
+  }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+  }
+  nav li {
+    display: block;
+    margin: 0;
+    text-align: center;
+    
+  }
+  nav a {
+    display: block;
+    padding: .4em;
+    color: blue;
+  }
+  
+  header input[type="checkbox"]:checked ~ nav {
+    max-height: 250px;
+  }
+  
+  header a:hover,
+  header a:focus,
+  header label:hover,
+  header label:focus {
+    background-color: none;
+  }
+  
+  @media only screen and (min-width: 700px) {
 
+    .hamburger {
+      display: none;
+    }
+    nav {
+      background: transparent;
+      float: right;
+      border: 0 !important;
+      max-height: none;
+    }
+    nav ul, nav li, nav li a {
+      display: inline-block;
+    }
+    nav a {
+      display: inline-block;
+      padding: 15px 1em;
+    }
+  }
+  
+  .hidden {
+    position: fixed;
+    top: -100%;
+    left: -100%;
+  }
