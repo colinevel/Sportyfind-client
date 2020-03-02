@@ -4,6 +4,7 @@ import FilterBar from "../components/FilterBar";
 import apiHandler from "../api/APIHandler";
 
 
+
 export default class Events extends Component {
   
     state = {

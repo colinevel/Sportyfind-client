@@ -25,7 +25,7 @@ export default function EventsCard({event}) {
             <div>remaining places : <span>{remainingPlaces}</span></div>
             <div className="seemoreandjoin">
 
-            <Link className="seemore" to={`/events/${event.name}`}>see more</Link>
+            <Link className="seemore" to={`/events/${event._id}`}>see more</Link>
             <div className="join">join</div></div>
            
         </div>
