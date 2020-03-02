@@ -11,6 +11,7 @@ export default function SportsCard({sport}) {
             search: `?sport=${sport.name}`,
             }} >
         <div className="card sport">
+        
             <div className="sportname">
             <h2>{sport.name}</h2>
             </div>

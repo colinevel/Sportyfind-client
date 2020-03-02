@@ -50,3 +50,21 @@ h2 {
 a {
     text-decoration: none;
 }
+
+@media only screen and (max-width: 768px) {
+    .list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2vw;
+        grid-auto-rows: minmax(100px, 225px);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2vw;
+        grid-auto-rows: minmax(100px, 122px);
+    }
+}

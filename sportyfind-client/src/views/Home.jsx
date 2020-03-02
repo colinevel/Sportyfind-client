@@ -21,9 +21,7 @@ export default function Home() {
   return (
     <div>
       <h1 className="title">Events By Sport</h1>
-      <div>
       <SportsList sports={sports}/>
-      </div>
     </div>
   );
 }

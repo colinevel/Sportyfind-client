@@ -12,6 +12,9 @@ export default class UpdateEvent extends Component{
     state = {
     name: "",
     date: "",
+    time: "",
+    lat: "",
+    lng: "",
     localisation:"",
     maxParticipants: "",
     description: "",
@@ -27,6 +30,9 @@ export default class UpdateEvent extends Component{
         .patch(`/events/edit/${this.props.match.params.id}`, {
             name: this.state.name,
             date: this.state.date,
+            time: this.state.time,
+            lat: this.state.lat,
+            lng: this.state.lng,
             localisation:this.state.localisation,
             maxParticipants: this.state.maxParticipants,
             description:this.state.description,
