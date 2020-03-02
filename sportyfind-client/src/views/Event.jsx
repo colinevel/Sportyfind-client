@@ -7,6 +7,9 @@ import apiHandler from "../api/APIHandler";
 // import Stars from "../components/star/Stars";
 import UserContext from "./../auth/UserContext";
 import MapsContainer from "./../components/MapsContainer";
+import moment from 'moment';
+
+
 
 import { Link } from "react-router-dom";
 
@@ -36,12 +39,15 @@ export default function Event({ match, history }) {
     const getData = async () => {
       const eventRes = await apiHandler.get(`/events/${match.params.id}`);
       setEvent(eventRes.data);
-
     }
 
     getData()
+    
 
   }, []);
+
+  
+
 
   return (
     <div>
@@ -51,7 +57,7 @@ export default function Event({ match, history }) {
         <div className="eventdescr">
         <div className="details">Name of the event: {event && event.name}</div>
         <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div>
-        <div className="details">Event Date: {event && event.date}</div>
+        <div className="details">Event Date: {event && moment(event.date).format("MMMM Do YYYY")}</div>
         <div className="details">Event Time: {event && event.time}</div>
         <div className="details">Event's creator: {event && event.creator}</div>
         <div className="details">Participants: {event && event.participants}</div>

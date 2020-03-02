@@ -51,7 +51,6 @@ export default withRouter(function CreateEvent({
   }, [mode, _id]);
 
   const handleDayChange = e => {
-    console.log("youhou", e);
     setState({...state, date: e})
   };
 
