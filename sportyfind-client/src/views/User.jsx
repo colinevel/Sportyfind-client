@@ -1,14 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, {  useState } from "react";
 import IconAvatarAdmin from "../components/icon/IconAvatarAdmin";
 import { useAuth } from "../auth/useAuth";
 
 import { Link } from "react-router-dom";
-import apiHandler from "../api/APIHandler";
-// styles
+
 
 
 export default function User() {
-    const { isLoading, currentUser } = useAuth();
+    const { currentUser } = useAuth();
 
     const [newAvatar, setAvatar] = useState(
         currentUser ? currentUser.avatar : ""

@@ -1,13 +1,11 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, {  useState, useEffect } from "react";
 import IconAvatarAdmin from "../components/icon/IconAvatarAdmin";
-import UserContext from "../auth/UserContext";
 import { useAuth } from "../auth/useAuth";
 import APIHandler from "../api/APIHandler";
 // styles
 
 
 export default function UpdateUser(props) {
-    const userContext = useContext(UserContext);
     const { isLoading, currentUser } = useAuth();
 
 
