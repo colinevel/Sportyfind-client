@@ -35,7 +35,6 @@ export default function Event({ match, history }) {
 
     const getData = async () => {
       const eventRes = await apiHandler.get(`/events/${match.params.id}`);
-      console.log("this is my data", eventRes.data.lng);
       setEvent(eventRes.data);
 
     }
@@ -52,14 +51,15 @@ export default function Event({ match, history }) {
         <div className="eventdescr">
         <div className="details">Name of the event: {event && event.name}</div>
         <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div>
-        <div className="details">Event Date&Hour: {event && event.date}</div>
+        <div className="details">Event Date: {event && event.date}</div>
+        <div className="details">Event Time: {event && event.time}</div>
         <div className="details">Event's creator: {event && event.creator}</div>
         <div className="details">Participants: {event && event.participants}</div>
         <div className="details">Max participants: {event && event.maxParticipants}</div> 
         </div>
         <div className="details">Event's localisation: {event && event.localisation}
           <div className="googlemap">
-          {event &&  <MapsContainer lat={event.lat} lng={event.lng}/>}
+          {event &&  <MapsContainer style={{width: "50%", height: "50%"}} lat={event.lat} lng={event.lng}/>}
           </div>
         </div>    
       </div>
@@ -68,7 +68,7 @@ export default function Event({ match, history }) {
     <button className="btndeleteevent" onClick={deleteEvent}> Delete </button>
     <button className="btnjoinevent"> Join </button>
     <button className="btnleaveevent"> Leave </button>
-    <Link to={`/events/edit/${match.params.id}`}> <button className="btneditevent"> Edit </button>
+    <Link to={`/events/edit/${match.params.id}`}><button className="btneditevent"> Edit </button>
     </Link>
     </div>
 

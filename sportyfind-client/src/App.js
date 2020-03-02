@@ -50,11 +50,11 @@ export default function App() {
               <Route path="/signin" component={Signin} />
               <Route path="/signup" component={Signup} />
               {/* check the protected route in src/auth folder */}
-              <ProtectedRoute path="/users/dashboard" component={MyDashboard} />
-              <ProtectedRoute path="/users/edit/:id" component={UpdateUser} />
-              <ProtectedRoute path="/users/:id" component={User} />
-              <ProtectedRoute path="/events/create" component={CreateEvent} />
-              <ProtectedRoute path="/events/edit/:id" component={UpdateEvent} />
+              <Route path="/users/dashboard" component={MyDashboard} />
+              <Route path="/users/edit/:id" component={UpdateUser} />
+              <Route path="/users/:id" component={User} />
+              <Route path="/events/create" component={CreateEvent} />
+              <Route path="/events/edit/:id" component={UpdateEvent} />
               {/* check the protected route in src/auth folder */}
 
               <Route exact path="/events/:id" component={Event} />
