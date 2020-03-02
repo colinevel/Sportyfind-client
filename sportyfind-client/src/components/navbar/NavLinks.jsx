@@ -7,7 +7,10 @@ import "../../styles/header.css";
 export default function NavLinks() {
   return (
     <div className="navlink">
-      <NavLink className="link" activeClassName="is-active" to="/events">
+      <NavLink className="link" activeClassName="is-active" to={{
+            pathname: "/events",
+            search: `?sport=AllSports`,
+            }}>
         All Events
       </NavLink>
       <NavLink className="link" activeClassName="is-active" to="/events/create">
