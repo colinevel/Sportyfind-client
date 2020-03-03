@@ -4,11 +4,11 @@ import apiHandler from "../api/APIHandler";
 import { withRouter} from "react-router-dom"
 
 
-export default withRouter(function Buttons({  event, history }) {
+export default withRouter(function Buttons({  event, history, clbk }) {
     const { isLoading, currentUser } = useAuth();
-
+    const [action, setAction] = useState(false);
     
-//     let [newParticipants, setNewParticipants] = useState()
+    // let [newParticipants, setNewParticipants] = useState()
 
 // console.log(newParticipants);
 
@@ -23,7 +23,7 @@ export default withRouter(function Buttons({  event, history }) {
 //     }, [isLoading]);
 
 
-//     // console.log(newParticipants);
+//     console.log(newParticipants);
     
 
 //     // useEffect(() => {
@@ -72,7 +72,9 @@ export default withRouter(function Buttons({  event, history }) {
 
 
 
-
+    // const joinEvent = async () => {
+    //     const eventRes = await apiHandler.patch("/events", match.params.id);
+    // }
 
 
 
@@ -82,8 +84,11 @@ export default withRouter(function Buttons({  event, history }) {
 
     const deleteEvent = async () => {
         const eventRes = await apiHandler.delete("/events", event._id);
-    
-        history.push({
+        if (clbk){
+        clbk()
+        setAction(!action)
+        }
+        else history.push({
             pathname: '/events',
             search: '?sport=AllSports'
         });
@@ -103,12 +108,14 @@ let participantsId
     }
 
 
+
+
     return (
         <div className="buttons">
             
 
             {event ? currentUser && currentUser._id === event.creator._id && (
-                <form><button className="btndeleteevent" onClick={deleteEvent}> Delete </button></form>
+                <button className="btndeleteevent" onClick={deleteEvent}> Delete </button>
             ) : <p>NO DATA YET</p>}
 
             {event ? currentUser && participantsId.includes(currentUser._id) && currentUser._id !== event.creator._id && (<button className="btnleaveevent"> Leave </button>

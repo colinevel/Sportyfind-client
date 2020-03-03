@@ -5,31 +5,21 @@ import Avatar from "./../components/navbar/Avatar";
 import "./../styles/header.css";
 import IconAvatarDisplay from "../components/icon/IconAvatarDisplay";
 import UserContext from "../auth/UserContext";
+import { useAuth } from "../auth/useAuth";
 
 
-export default class Signup extends Component {
-  state = {
-      avatar: "",
-      tmpAvatar: "",
-  };
+export default function Header () {
+  const { isLoading, currentUser } = useAuth();
+  const [avatar, setAvatar] = useState(null);
 
+  useEffect(() => {
+    let newAvatar = null;
+    if (!isLoading && currentUser) {
+      newAvatar = currentUser.avatar;
+    }
+    setAvatar(newAvatar)
+  }, [isLoading]) 
 
-  handleImage = e => {
-      // console.log("Signup@handle image", e.target.files[0]);
-      this.setState({ avatar: e.target.files[0] }, () => {
-          const reader = new FileReader();
-          reader.onloadend = () => {
-              // when the fileREader ends  ...
-              const baseString = reader.result; // get the image as a base64 encoded string
-              this.setState({ tmpAvatar: baseString }); // set the tmp avatar as an image source before upload
-          };
-          reader.readAsDataURL(this.state.avatar); // read the file from the local disk
-      });
-  };
-
-
-render () {
-  const { tmpAvatar } = this.state;
   return (
 
     <div>    
@@ -43,10 +33,14 @@ render () {
       <li><a href="#"><NavLinks/></a></li>
     </ul>
   </nav>
-  <div className="headeravatar"><IconAvatarDisplay avatar={tmpAvatar} clbk={this.handleImage} /></div>
+  {currentUser ?
+  <div className="headeravatar">
+  <IconAvatarDisplay avatar={avatar || currentUser.avatar} />
+  </div> : ""
+  }
   <label class="hamburger" for="nav-toggle"></label>
   </div>
 </header>
     </div>
   )
-}}
+}

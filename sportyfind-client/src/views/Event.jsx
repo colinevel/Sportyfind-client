@@ -7,7 +7,7 @@ import apiHandler from "../api/APIHandler";
 // import Stars from "../components/star/Stars";
 import UserContext from "./../auth/UserContext";
 import MapsContainer from "./../components/MapsContainer";
-import Buttons from "./../components/Buttons";
+import Button from "./../components/Buttons";
 import moment from 'moment';
 import { Link } from "react-router-dom";
 
@@ -18,21 +18,33 @@ React.createContext({
   currentUser: null,
   setCurrentUser: () => { }
 });
+
 export default function Event({ match, history }) {
   const userContext = useContext(UserContext);
   const { currentUser } = userContext;
   const [event, setEvent] = useState(null)
+
   const deleteEvent = async () => {
     const eventRes = await apiHandler.delete("/events", match.params.id);
     history.push("/events");
   }
+
+  const joinEvent = async () => {
+    const eventRes = await apiHandler.patch(`/events/join/${match.params.id}`,{});
+    setEvent(eventRes.data);
+  }
+
+  const leaveEvent = async () => {
+    const eventRes = await apiHandler.patch(`/events/leave/${match.params.id}`,{});
+    setEvent(eventRes.data);
+  }
+  
   useEffect(() => {
     const getData = async () => {
       const eventRes = await apiHandler.get(`/events/${match.params.id}`);
       setEvent(eventRes.data);
     }
     getData()
-    
   }, []);
 
   return (
@@ -40,13 +52,13 @@ export default function Event({ match, history }) {
       <div><h1 className="eventtitle">Event Details</h1></div>
       <div className="eventdetails">
         <div className="eventdescr">
-          <div className="details">Name of the event: {event && event.name}</div>
-          <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div>
-          <div className="details">Event Date: {event && moment(event.date).format("MMMM Do YYYY")}</div>
-          <div className="details">Event Time: {event && event.time}</div>
-          <div className="details">Event's creator: {event && event.creator.username}</div>
-          <div className="details">Participants: <ul>{event && event.participants.map((p, i) => <li key={i}>{p.username}</li>)} </ul></div>
-          <div className="details">Max participants: {event && event.maxParticipants}</div>
+        <div className="details">Name of the event: {event && event.name}</div>
+        <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div>
+        <div className="details">Event Date: {event && moment(event.date).format("MMMM Do YYYY")}</div>
+        <div className="details">Event Time: {event && event.time}</div>
+        <div className="details">Event's creator: {event && event.creator.username}</div>
+        <div className="details">Participants: {event && event.participants.length} <ul>{event && event.participants.map((p,i)=> <li key={i}>{p.username}</li>)} </ul></div>
+        <div className="details">Max participants: {event && event.maxParticipants}</div> 
         </div>
         <div className="details">Event's localisation: {event && event.localisation}
           <div className="googlemap">
@@ -56,6 +68,13 @@ export default function Event({ match, history }) {
       </div>
 
       <div className="adminbuttons">
+    <button className="btndeleteevent" onClick={deleteEvent}> Delete </button>
+    <button className="btnjoinevent" onClick={joinEvent}> Join </button>
+    <button className="btnleaveevent" onClick={leaveEvent}> Leave </button>
+    <Link to={`/events/edit/${match.params.id}`}><button className="btneditevent"> Edit </button>
+    </Link>
+    {/* </div>
+        {event ? currentUser._id === event.creator && (
         <Buttons event={event}/>
 
 
@@ -64,6 +83,7 @@ export default function Event({ match, history }) {
           </Link>
         ) : <p>NO DATA YET</p>}
 
+      </div> */}
       </div>
       </div>
   );
