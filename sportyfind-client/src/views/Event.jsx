@@ -35,9 +35,6 @@ export default function Event({ match, history }) {
     
   }, []);
 
-
-
-
   return (
     <div>
       <div><h1 className="eventtitle">Event Details</h1></div>
@@ -57,8 +54,6 @@ export default function Event({ match, history }) {
           </div>
         </div>
       </div>
-
-
 
       <div className="adminbuttons">
         <Buttons event={event}/>
