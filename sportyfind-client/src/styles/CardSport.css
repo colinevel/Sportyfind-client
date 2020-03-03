@@ -18,9 +18,10 @@
 
 .list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);  
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
+
 }
 
 .sportname {
@@ -54,7 +55,6 @@ a {
 @media only screen and (max-width: 768px) {
     .list{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         grid-gap: 2vw;
         grid-auto-rows: minmax(100px, 225px);
     }
@@ -63,7 +63,6 @@ a {
 @media only screen and (max-width: 400px) {
     .list{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         grid-gap: 2vw;
         grid-auto-rows: minmax(100px, 122px);
     }

@@ -56,7 +56,7 @@ export default function App() {
               <Route path="/events/create" component={CreateEvent} />
               <Route path="/events/edit/:id" component={UpdateEvent} />
               {/* check the protected route in src/auth folder */}
-
+              
               <Route exact path="/events/:id" component={Event} />
            
               

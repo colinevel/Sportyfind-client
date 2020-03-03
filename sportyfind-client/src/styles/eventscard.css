@@ -22,6 +22,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2vw;
     grid-auto-rows: minmax(100px, 319px);
+    
 }
 
 .eventdate {
@@ -91,7 +92,7 @@
 @media only screen and (max-width: 768px) {
     .allcards {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 2vw;
         grid-auto-rows: minmax(100px, 350px);
     }

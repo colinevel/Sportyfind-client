@@ -43,6 +43,7 @@ export default withRouter(function CreateEvent({
 
       const sportsRes = await APIHandler.get(`/sports`);
       newState.sports = sportsRes.data.sports;
+      
 
       setState(newState);
     };
@@ -55,7 +56,7 @@ export default withRouter(function CreateEvent({
   };
 
   const handleAddressChange = e => {
-    console.log(e.description);
+    // console.log(e.description);
     setState({...state, localisation: e.description })
   };
 
@@ -68,7 +69,6 @@ export default withRouter(function CreateEvent({
   .then(results => getLatLng(results[0]))
   .then(({ lat, lng }) =>{
     setState({...state, lat: lat, lng: lng})
-    console.log('Successfully got latitude and longitude', { lat, lng })
   }
   );
 
@@ -81,7 +81,10 @@ export default withRouter(function CreateEvent({
         const apiResult = await APIHandler.post("/events/create", state);
       } else await APIHandler.patch(`/events/edit/${match.params.id}`, state);
 
-      history.push("/events");
+      history.push({
+        pathname: '/events',
+        search: '?sport=AllSports'
+    });
     } catch (apiErr) {
       console.error(apiErr);
     }
