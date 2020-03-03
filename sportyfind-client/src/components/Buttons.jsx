@@ -1,23 +1,97 @@
-import React from 'react'
+import React, {  useState, useEffect } from 'react'
 import { useAuth } from "../auth/useAuth";
 import apiHandler from "../api/APIHandler";
+import { withRouter} from "react-router-dom"
 
 
-
-export default function Buttons({ match, event, history }) {
+export default withRouter(function Buttons({  event, history }) {
     const { isLoading, currentUser } = useAuth();
+
+    
+//     let [newParticipants, setNewParticipants] = useState()
+
+// console.log(newParticipants);
+
+
+//     useEffect(() => {
+//         if (!isLoading) {
+//             const newParticipants = event.participants;
+//             setNewParticipants({
+//                 newParticipants
+//             })
+//         }
+//     }, [isLoading]);
+
+
+//     // console.log(newParticipants);
+    
+
+//     // useEffect(() => {
+//     //     if (!isLoading) {
+//     //         const newParticipant = currentUser._id;
+//     //         setNewParticipant(
+//     //             newParticipant
+//     //         )
+//     //     }
+//     // }, [isLoading]);
+   
+
+//     const handleJoin = async e => {
+//         try {
+//             apiHandler
+//             .patch(`/events/edit/${event._id}`, {
+//                 participants: newParticipants.push(currentUser._id)
+//             });
+//             this.props.history.push({
+//                 pathname: '/events',
+//                 search: '?sport=AllSports'
+//             });
+//         } catch(err) {
+//             //
+//         }
+//     }
+
+
+    //     e.preventDefault();  
+    //     try {
+
+    //         apiHandler
+    //             .patch(`/events/${event._id}`, {
+    //                 newParticipant
+    //             });
+    //             history.push({
+    //                 pathname: '/events',
+    //                 search: '?sport=AllSports'
+    //             });
+
+    //     } catch (err) {
+
+    //         // this.props.history.push("/artists");
+    //     }
+    // }
+
+
+
+
+
+
+
 
     if (isLoading) return null;
 
 
-
     const deleteEvent = async () => {
-        const eventRes = await apiHandler.delete("/events", match.params.id);
+        const eventRes = await apiHandler.delete("/events", event._id);
+    
         history.push({
             pathname: '/events',
             search: '?sport=AllSports'
         });
     }
+
+    
+
+
 
 let participantsId
 
@@ -31,17 +105,20 @@ let participantsId
 
     return (
         <div className="buttons">
+            
 
             {event ? currentUser && currentUser._id === event.creator._id && (
-                <button className="btndeleteevent" onClick={deleteEvent}> Delete </button>
+                <form><button className="btndeleteevent" onClick={deleteEvent}> Delete </button></form>
             ) : <p>NO DATA YET</p>}
 
             {event ? currentUser && participantsId.includes(currentUser._id) && currentUser._id !== event.creator._id && (<button className="btnleaveevent"> Leave </button>
             ) : <p>NO DATA YET</p>}
 
-            {event && currentUser ? !participantsId.includes(currentUser._id) && (<button className="btnjoinevent"> Join </button>
+            {event && currentUser ? !participantsId.includes(currentUser._id) && (<button className="btnjoinevent" 
+            // onClick={handleJoin}
+            > Join </button>
             ) : <a href="/signin" className="btnjoinevent"> Join </a>}
 
         </div>
     )
-}
+})
