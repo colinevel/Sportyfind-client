@@ -11,6 +11,7 @@ import Buttons from "./../components/Buttons";
 import moment from 'moment';
 import { Link } from "react-router-dom";
 
+
 // styles
 import "../styles/event.css"
 React.createContext({
@@ -60,7 +61,7 @@ export default function Event({ match, history }) {
 
 
       <div className="adminbuttons">
-        <Buttons match={match} event={event} history={history} />
+        <Buttons event={event}/>
 
 
         {event?  currentUser && currentUser._id === event.creator._id && (

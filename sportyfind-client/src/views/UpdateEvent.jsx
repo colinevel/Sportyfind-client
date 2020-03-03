@@ -51,7 +51,6 @@ export default class UpdateEvent extends Component{
 }
 
 handleAddressChange = e => {
-  console.log(e.description);
   this.setState(prevValues => ({
     ...prevValues,
     localisation: e.description
