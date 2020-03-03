@@ -4,6 +4,11 @@ import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import "react-google-places-autocomplete/dist/assets/index.css";
 import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 
+import DayPickerInput from "react-day-picker/DayPickerInput";
+import "react-day-picker/lib/style.css";
+import moment from 'moment';
+
+
 // custom tools
 import APIHandler from "../api/APIHandler";
 
@@ -28,7 +33,7 @@ export default class UpdateEvent extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     try {
-      APIHandler.patch(`/events/edit/${this.props.match.params.id}`, {
+      await APIHandler.patch(`/events/edit/${this.props.match.params.id}`, {
         name: this.state.name,
         date: this.state.date,
         time: this.state.time,
@@ -50,8 +55,14 @@ export default class UpdateEvent extends Component {
     }
   };
 
+  handleDayChange = e => {
+    this.setState(prevValues => ({
+      ...prevValues,
+      date: e
+    }));
+  };
+
   handleAddressChange = e => {
-    console.log("je suis appelé")
     geocodeByAddress(e.description)
       .then(results => getLatLng(results[0]))
       .then(({ lat, lng }) => {
@@ -137,17 +148,17 @@ export default class UpdateEvent extends Component {
             </div>
 
             <div className="nameinput">
-              <label className="label" htmlFor="date">
-                Date
-              </label>
-              <input
-                onChange={this.handleChange}
-                className="input"
-                id="date"
-                type="date"
-                value={this.state.date}
-              />
-            </div>
+            <label className="label" htmlFor="date">
+              Date
+            </label>
+            <DayPickerInput
+              onDayChange={this.handleDayChange}
+              // onDayChange={day => console.log("this is the new day", day)}
+              className="input"
+              id="date"
+              value={moment(this.state.date).format("MMMM Do YYYY")}
+            />
+          </div>
 
             <div className="nameinput">
               <label className="label" htmlFor="time">
