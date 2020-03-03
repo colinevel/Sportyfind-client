@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import APIHandler from "../api/APIHandler";
+import moment from 'moment';
+
 
 // styles
 import "../styles/eventscard.css"
@@ -13,7 +15,7 @@ export default function EventsCard({event}) {
          <img className="backimg" src={event.sport.image} alt=""/>
         
             <div className="eventdate">
-                <div >{event.date}</div>
+                <div >{moment(event.date).format("MMMM Do YYYY")}</div>
             </div>
 
             <hr className="separation"></hr>

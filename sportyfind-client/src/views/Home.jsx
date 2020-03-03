@@ -19,7 +19,7 @@ export default function Home() {
   if (!sports) return <div>No sports yet</div>;
   return (
     <div>
-      <h1 className="title">Events By Sport</h1>
+      <h1 className="title">Choose your Sport</h1>
       <SportsList sports={sports}/>
     </div>
   );
