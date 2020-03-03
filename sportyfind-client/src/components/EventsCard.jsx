@@ -7,7 +7,7 @@ import Buttons from "./Buttons"
 // styles
 import "../styles/eventscard.css"
 
-export default function EventsCard({ event,history }) {
+export default function EventsCard({ event,history, clbk }) {
     var remainingPlaces = event.maxParticipants - event.participants.length;
     return (
 
@@ -27,7 +27,7 @@ export default function EventsCard({ event,history }) {
                 <div className="seemoreandjoin">
 
                     <Link className="seemore" to={`/events/${event._id}`}>see more</Link>
-                    <Buttons event={event} history={history}/>
+                    <Buttons event={event} history={history} clbk={clbk}/>
                 </div>
             </div>
         </div>

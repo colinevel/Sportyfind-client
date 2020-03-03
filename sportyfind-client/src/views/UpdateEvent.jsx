@@ -51,7 +51,6 @@ export default class UpdateEvent extends Component {
   };
 
   handleAddressChange = e => {
-    console.log("je suis appelé")
     geocodeByAddress(e.description)
       .then(results => getLatLng(results[0]))
       .then(({ lat, lng }) => {

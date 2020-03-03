@@ -10,19 +10,21 @@ export default class Events extends Component {
     state = {
         filterBySport: this.props.history.location.search.replace("?sport=", ""),
         filterByCity: "",
-        // filterByDate: "",
         sports: [],
         events: []
     }
 
-    componentDidMount() {
-
-
+    getEvents = () => {
         Promise.all([apiHandler.get("/sports"), apiHandler.get("/events")])
-            .then(apiRes => {
-                this.setState({ sports: apiRes[0].data.sports, events: apiRes[1].data.events })
-            })
-            .catch(apiErr => console.error(apiErr));
+        .then(apiRes => {
+            this.setState({ sports: apiRes[0].data.sports, events: apiRes[1].data.events })
+        })
+        .catch(apiErr => console.error(apiErr));
+
+    }
+
+    componentDidMount() {
+        this.getEvents()
     }
 
     componentDidUpdate() {
@@ -56,7 +58,7 @@ export default class Events extends Component {
                 {/* <hr /> */}
                 <FilterBar clbk={this.onFilterBarUpdate} filter={this.state.filterBySport} sports={this.state.sports} />
                 {/* <hr /> */}
-                <CardsList history={this.props.history} events={this.eventsFiltered()} />
+                <CardsList history={this.props.history} events={this.eventsFiltered()} clbk={() => this.getEvents()} />
             </div>
         )
     }
