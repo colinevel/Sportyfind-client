@@ -50,25 +50,30 @@ export default function Event({ match, history }) {
 
       <div className="eventdetails">
         <div className="eventdescr">
-          <div className="details">Name of the event: {event && event.name}</div>
+          {/* <div className="details">Name of the event: {event && event.name}</div>
           <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div>
           <div className="details">Event Date&Hour: {event && event.date}</div>
           <div className="details">Event's creator: {event && event.creator}</div>
           <div className="details">Participants: {event && event.participants}</div>
           <div className="details">Max participants: {event && event.maxParticipants}</div>
         </div>
+        
         <div className="details">Event's localisation: {event && event.localisation}
           <div className="googlemap">
             {event && <MapsContainer lat={event.lat} lng={event.lng} />}
+        </div>
+        /
+        </div> */}
+
         <div className="details">Name of the event: {event && event.name}</div>
         <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div>
         <div className="details">Event Date&Hour: {event && event.date}</div>
-        <div className="details">Event's creator: {event && event.creator.username}</div>
+        <div className="details">Event's creator: {event && event.creator}</div>
         <div className="details">Participants: <ul>{event && event.participants.map((p,i)=> <li key={i}>{p.username}</li>)} </ul></div>
         <div className="details">Max participants: {event && event.maxParticipants}</div> 
 
 
-        </div>
+        
         <div className="details">Event's localisation: {event && event.localisation}
           <div className="googlemap">
           {event &&  <MapsContainer style={{width: "50%", height: "50%"}} lat={event.lat} lng={event.lng}/>}
@@ -90,8 +95,8 @@ export default function Event({ match, history }) {
         ) : <p>NO DATA YET</p>}
         
       </div>
-
     </div>
 
+    
   );
 }
