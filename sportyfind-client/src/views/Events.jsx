@@ -27,10 +27,6 @@ export default class Events extends Component {
         this.getEvents()
     }
 
-    componentDidUpdate() {
-
-    }
-
 
     eventsFiltered = () => {
 

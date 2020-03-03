@@ -7,7 +7,9 @@ import { withRouter} from "react-router-dom"
 export default withRouter(function Buttons({  event, history, clbk }) {
     const { isLoading, currentUser } = useAuth();
     const [action, setAction] = useState(false);
-    
+    const [newEvent, setNewEvent] = useState(null)
+
+
     // let [newParticipants, setNewParticipants] = useState()
 
 // console.log(newParticipants);
@@ -26,14 +28,6 @@ export default withRouter(function Buttons({  event, history, clbk }) {
 //     console.log(newParticipants);
     
 
-//     // useEffect(() => {
-//     //     if (!isLoading) {
-//     //         const newParticipant = currentUser._id;
-//     //         setNewParticipant(
-//     //             newParticipant
-//     //         )
-//     //     }
-//     // }, [isLoading]);
    
 
 //     const handleJoin = async e => {
@@ -52,29 +46,9 @@ export default withRouter(function Buttons({  event, history, clbk }) {
 //     }
 
 
-    //     e.preventDefault();  
-    //     try {
-
-    //         apiHandler
-    //             .patch(`/events/${event._id}`, {
-    //                 newParticipant
-    //             });
-    //             history.push({
-    //                 pathname: '/events',
-    //                 search: '?sport=AllSports'
-    //             });
-
-    //     } catch (err) {
-
-    //         // this.props.history.push("/artists");
-    //     }
-    // }
 
 
 
-    // const joinEvent = async () => {
-    //     const eventRes = await apiHandler.patch("/events", match.params.id);
-    // }
 
 
 
@@ -94,6 +68,21 @@ export default withRouter(function Buttons({  event, history, clbk }) {
         });
     }
 
+
+    const joinEvent = async () => {
+        const eventRes = await apiHandler.patch(`/events/join/${event._id}`,{});
+        clbk()
+        setAction(!action)
+        setNewEvent(eventRes.data);
+      }
+    
+      const leaveEvent = async () => {
+        const eventRes = await apiHandler.patch(`/events/leave/${event._id}`,{});
+        clbk()
+        setAction(!action)
+        setNewEvent(eventRes.data);
+      }
+      
     
 
 
@@ -118,11 +107,11 @@ let participantsId
                 <button className="btndeleteevent" onClick={deleteEvent}> Delete </button>
             ) : <p>NO DATA YET</p>}
 
-            {event ? currentUser && participantsId.includes(currentUser._id) && currentUser._id !== event.creator._id && (<button className="btnleaveevent"> Leave </button>
+            {event ? currentUser && participantsId.includes(currentUser._id) && currentUser._id !== event.creator._id && (<button className="btnleaveevent" onClick={leaveEvent}> Leave </button>
             ) : <p>NO DATA YET</p>}
 
             {event && currentUser ? !participantsId.includes(currentUser._id) && (<button className="btnjoinevent" 
-            // onClick={handleJoin}
+            onClick={joinEvent}
             > Join </button>
             ) : <a href="/signin" className="btnjoinevent"> Join </a>}
 
