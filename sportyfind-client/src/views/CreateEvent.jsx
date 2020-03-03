@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import "react-google-places-autocomplete/dist/assets/index.css";
-import { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
-
+import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
@@ -13,7 +12,6 @@ import APIHandler from "../api/APIHandler";
 
 // styles
 import "../styles/CreateEvent.css";
-
 
 export default withRouter(function CreateEvent({
   mode = "create",
@@ -35,42 +33,38 @@ export default withRouter(function CreateEvent({
     isRequesting: false
   });
 
- 
-
   useEffect(() => {
     const getData = async () => {
-      let newState = { ...state };
+      try {
+        let newState = { ...state };
+        const sportsRes = await APIHandler.get(`/sports`);
+        newState.sports = sportsRes.data.sports;
 
-      const sportsRes = await APIHandler.get(`/sports`);
-      newState.sports = sportsRes.data.sports;
-      
-
-      setState(newState);
+        setState(newState);
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     getData();
   }, [mode, _id]);
 
   const handleDayChange = e => {
-    setState({...state, date: e})
+    setState({ ...state, date: e });
   };
 
   const handleAddressChange = e => {
-    // console.log(e.description);
-    setState({...state, localisation: e.description })
+    geocodeByAddress(e.description)
+      .then(results => getLatLng(results[0]))
+      .then(({ lat, lng }) => {
+        setState({ ...state, lat: lat, lng: lng, localisation: e.description });
+      });
   };
 
   const handleChange = e => {
     e.persist();
     setState({ ...state, [e.target.id]: e.target.value });
   };
-
-  geocodeByAddress(state.localisation)
-  .then(results => getLatLng(results[0]))
-  .then(({ lat, lng }) =>{
-    setState({...state, lat: lat, lng: lng})
-  }
-  );
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -82,17 +76,16 @@ export default withRouter(function CreateEvent({
       } else await APIHandler.patch(`/events/edit/${match.params.id}`, state);
 
       history.push({
-        pathname: '/events',
-        search: '?sport=AllSports'
-    });
+        pathname: "/events",
+        search: "?sport=AllSports"
+      });
     } catch (apiErr) {
       console.error(apiErr);
     }
   };
-
+  console.log("rerendering....");
   return (
     <div className="toute">
-
       <p className="createevent">Create an event</p>
 
       <form className="form" onSubmit={handleSubmit}>
@@ -185,10 +178,10 @@ export default withRouter(function CreateEvent({
             />
           </div>
 
-
           <div className="nameinput">
             <label className="label" htmlFor="localisation">
-              Localisation</label>
+              Localisation
+            </label>
             <GooglePlacesAutocomplete
               inputClassName="input"
               id="localisation"
@@ -215,4 +208,3 @@ export default withRouter(function CreateEvent({
     </div>
   );
 });
-

@@ -10,6 +10,8 @@ import MapsContainer from "./../components/MapsContainer";
 import Button from "./../components/Buttons";
 import moment from 'moment';
 import { Link } from "react-router-dom";
+
+
 // styles
 import "../styles/event.css"
 React.createContext({
@@ -44,7 +46,7 @@ export default function Event({ match, history }) {
     }
     getData()
   }, []);
-  
+
   return (
     <div>
       <div><h1 className="eventtitle">Event Details</h1></div>
@@ -60,23 +62,29 @@ export default function Event({ match, history }) {
         </div>
         <div className="details">Event's localisation: {event && event.localisation}
           <div className="googlemap">
-          {event &&  <MapsContainer style={{width: "50%", height: "50%"}} lat={event.lat} lng={event.lng}/>}
+            {event && <MapsContainer style={{ width: "50%", height: "50%" }} lat={event.lat} lng={event.lng} />}
           </div>
         </div>
-        </div>
+      </div>
+
       <div className="adminbuttons">
     <button className="btndeleteevent" onClick={deleteEvent}> Delete </button>
     <button className="btnjoinevent" onClick={joinEvent}> Join </button>
     <button className="btnleaveevent" onClick={leaveEvent}> Leave </button>
     <Link to={`/events/edit/${match.params.id}`}><button className="btneditevent"> Edit </button>
     </Link>
-    </div>
+    {/* </div>
         {event ? currentUser._id === event.creator && (
+        <Buttons event={event}/>
+
+
+        {event?  currentUser && currentUser._id === event.creator._id && (
           <Link to={`/events/edit/${match.params.id}`}> <button className="btneditevent"> Edit </button>
           </Link>
         ) : <p>NO DATA YET</p>}
-        
+
+      </div> */}
       </div>
-    
+      </div>
   );
 }
