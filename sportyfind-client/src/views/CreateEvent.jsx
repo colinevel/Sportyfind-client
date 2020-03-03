@@ -6,6 +6,7 @@ import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 
 import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
+import moment from 'moment';
 
 // custom tools
 import APIHandler from "../api/APIHandler";
@@ -130,7 +131,7 @@ export default withRouter(function CreateEvent({
               // onDayChange={day => console.log("this is the new day", day)}
               className="input"
               id="date"
-              value={state.date}
+              value={moment(state.date).format("MMMM Do YYYY")}
             />
           </div>
 
