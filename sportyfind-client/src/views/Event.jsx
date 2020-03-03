@@ -10,7 +10,6 @@ import MapsContainer from "./../components/MapsContainer";
 import Buttons from "./../components/Buttons";
 import moment from 'moment';
 import { Link } from "react-router-dom";
-import moment from 'moment';
 
 // styles
 import "../styles/event.css"
@@ -34,6 +33,7 @@ export default function Event({ match, history }) {
     getData()
     
   }, []);
+
 
 
 
@@ -63,12 +63,12 @@ export default function Event({ match, history }) {
         <Buttons match={match} event={event} history={history} />
 
 
-        {event ? currentUser._id === event.creator && (
+        {event?  currentUser && currentUser._id === event.creator._id && (
           <Link to={`/events/edit/${match.params.id}`}> <button className="btneditevent"> Edit </button>
           </Link>
         ) : <p>NO DATA YET</p>}
 
       </div>
-    
+      </div>
   );
 }
