@@ -10,7 +10,7 @@ export default class MyDashboard extends Component {
     state = {
         filterBySport: "AllSports",
         filterByCity: "",
-        // filterByDate: "",
+        filterByDate: "",
         test: this.props,
         sports: [],
         events: []
@@ -29,9 +29,12 @@ export default class MyDashboard extends Component {
     eventsFiltered = () => {
     
         return this.state.events.filter((p) => {
-            if(this.state.filterBySport === "AllSports") {return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())}
+            if(this.state.filterBySport === "AllSports")
+            {return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())}
             else if (this.state.filterBySport !== p.sport.name)  return false;
-            
+            else if (this.state.filterByDate !== p.date)  return false;
+
+
             return p.localisation.toLowerCase().includes(this.state.filterByCity.toLowerCase())
         })
     }
@@ -40,7 +43,7 @@ export default class MyDashboard extends Component {
     onFilterBarUpdate = (type, value) => {
         if (type === 'sport') { this.setState({ filterBySport: value }) }
         if (type === 'search') { this.setState({ filterByCity: value }) }
-        // if (type === 'date') { this.setState({ filterByDate: value }) }
+        if (type === 'date') { this.setState({ filterByDate: value }) }
         if (type === 'pastEvents') { this.setState({ filterByPastEvents: value }) }
     }
 
