@@ -6,43 +6,33 @@ import apiHandler from "../api/APIHandler";
 // import List from "../components/List";
 // import Stars from "../components/star/Stars";
 import UserContext from "./../auth/UserContext";
-import MapsContainer from "./../components/MapsContainer"
-import Buttons from "./../components/Buttons"
+import MapsContainer from "./../components/MapsContainer";
+import Buttons from "./../components/Buttons";
+import moment from 'moment';
 import { Link } from "react-router-dom";
 import moment from 'moment';
 
 // styles
 import "../styles/event.css"
-
-
 React.createContext({
   currentUser: null,
   setCurrentUser: () => { }
 });
-
 export default function Event({ match, history }) {
-
-
   const userContext = useContext(UserContext);
   const { currentUser } = userContext;
-
   const [event, setEvent] = useState(null)
-
   const deleteEvent = async () => {
     const eventRes = await apiHandler.delete("/events", match.params.id);
     history.push("/events");
   }
-
   useEffect(() => {
-
     const getData = async () => {
       const eventRes = await apiHandler.get(`/events/${match.params.id}`);
       setEvent(eventRes.data);
-
     }
-
     getData()
-
+    
   }, []);
 
 
@@ -79,8 +69,6 @@ export default function Event({ match, history }) {
         ) : <p>NO DATA YET</p>}
 
       </div>
-
-    </div>
-
+    
   );
 }
