@@ -8,22 +8,23 @@ import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
+import moment from 'moment';
 
 
-export default function FilterBar({ clbk, sports, filter }) {
+export default function FilterBar({ clbk, sports, filter, date }) {
     const { isLoading, currentUser } = useAuth();
 
     const [showCalendar, setShowCalendar] = useState(false);
+    
+
+    const [dateFilter, setDateFilter] = useState("")
+
     const handleClick = e => {
+        clbk('resetDate', e)
+        setDateFilter("")
         setShowCalendar(!showCalendar)
     }
-    // useEffect(() => {
-    //     if (!isLoading) {
-    //             setShowCalendar({
-    //                 showCalendar:!showCalendar
-    //         })
-    //     }
-    // }, [showCalendar]);
+
 
     return (
         <div className="allfilterbar">
@@ -49,16 +50,23 @@ export default function FilterBar({ clbk, sports, filter }) {
                     {/* {
                         showCalendar
                             ? ( */}
-                            <div className={ showCalendar ? "datePicker" :"datePicker not-visible" }>
-                                    <DayPickerInput
-                                        dayPickerProps={{
-                                            day: new Date('Today'),
-                                            showWeekNumbers: true,
-                                            todayButton: 'Today',
-                                        }}
-                                    />
-                         </div>
-                            {/* )
+                    <div className={showCalendar ? "datePicker" : "datePicker not-visible"}>
+                        <DayPickerInput
+                            dayPickerProps={{
+                                showWeekNumbers: true,
+                                todayButton: 'Today',
+                            }}
+                            onDayChange={(e) => {
+                                clbk('date', e);
+                                setDateFilter(e)
+                            }}
+                            value={moment(dateFilter).format("MMMM Do YYYY")}
+
+
+
+                        />
+                    </div>
+                    {/* )
                             : (
                                 null
                             )} */}
