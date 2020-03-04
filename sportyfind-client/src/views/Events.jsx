@@ -20,7 +20,6 @@ export default class Events extends Component {
             this.setState({ sports: apiRes[0].data.sports, events: apiRes[1].data.events })
         })
         .catch(apiErr => console.error(apiErr));
-
     }
 
     componentDidMount() {
