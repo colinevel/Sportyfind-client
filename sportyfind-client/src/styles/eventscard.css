@@ -11,6 +11,14 @@
 
 }
 
+.creatorCard {
+    border: 1px solid red;
+}
+
+.participantCard {
+    border: 1px solid green;
+}
+
 /* img {
     max-width: 100%;
     max-height: 100%;

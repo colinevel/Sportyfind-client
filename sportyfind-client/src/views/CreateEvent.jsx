@@ -131,6 +131,7 @@ export default withRouter(function CreateEvent({
               // onDayChange={day => console.log("this is the new day", day)}
               className="input"
               id="date"
+              placeholder= {"Choose your date"}
               value={moment(state.date).format("MMMM Do YYYY")}
             />
           </div>
