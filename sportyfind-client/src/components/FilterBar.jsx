@@ -16,7 +16,7 @@ export default function FilterBar({ clbk, sports, filter, date }) {
 
     const [showCalendar, setShowCalendar] = useState(false);
 
-    moment.updateLocale(moment.locale(), { invalidDate: "Choose your date" })
+    moment.updateLocale(moment.locale(), { invalidDate: "Filter by date" })
     
 
     const [dateFilter, setDateFilter] = useState("")
