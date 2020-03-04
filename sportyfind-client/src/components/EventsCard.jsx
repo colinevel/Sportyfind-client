@@ -15,7 +15,7 @@ export default function EventsCard({ event,history, clbk }) {
             <img className="backimg" src={event.sport.image} alt="" />
 
             <div className="eventdate">
-                <div >{moment(event.date).format("MMMM Do YYYY")}</div>
+                <div >{moment(event.date).format("MMMM Do YYYY")} - {event.time}</div>
             </div>
 
             <hr className="separation"></hr>
