@@ -104,7 +104,6 @@ export default class UpdateEvent extends Component {
       .catch(apiErr => console.error(apiErr));
   }
   render() {
-    console.log(this.state.localisation);
     return (
       <div className="toute">
         <p className="createevent">Update an event</p>
