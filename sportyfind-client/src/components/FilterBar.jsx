@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // styles
 import "../styles/filterbar.css";
 import 'react-day-picker/lib/style.css';
-import { useAuth } from "../auth/useAuth";
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DayPickerInput from 'react-day-picker/DayPickerInput';
@@ -11,15 +10,15 @@ import 'react-day-picker/lib/style.css';
 import moment from 'moment';
 
 
-export default function FilterBar({ clbk, sports, filter, date }) {
-    const { isLoading, currentUser } = useAuth();
+export default function FilterBar({ clbk, sports, filter }) {
+ 
 
     const [showCalendar, setShowCalendar] = useState(false);
 
     moment.updateLocale(moment.locale(), { invalidDate: "Filter by date" })
     
 
-    const [dateFilter, setDateFilter] = useState("")
+    const [dateFilter, setDateFilter] = useState(" ")
 
     const handleClick = e => {
         clbk('resetDate', e)

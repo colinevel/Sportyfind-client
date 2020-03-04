@@ -2,16 +2,29 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import moment from 'moment';
 import Buttons from "./Buttons"
+import { useAuth } from "../auth/useAuth";
+
 
 
 // styles
-import "../styles/eventscard.css"
+import "./../styles/eventscard.css"
 
 export default function EventsCard({ event,history, clbk }) {
+    const { isLoading, currentUser } = useAuth();
     var remainingPlaces = event.maxParticipants - event.participants.length;
+
+var creator = false
+var participant = false
+
+if (currentUser) {
+    creator =  currentUser._id === event.creator._id;
+    participant = event.participants.map((p) => p._id).includes(currentUser._id);
+}
+
+
     return (
 
-        <div className="cardOfevent" >
+        <div className={creator ? "cardOfevent creatorCard": participant ? "cardOfevent participantCard" : "cardOfevent"}>
             <img className="backimg" src={event.sport.image} alt="" />
 
             <div className="eventdate">

@@ -1,10 +1,8 @@
-import React, { useEffect, useState, Component } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "./../components/navbar/Logo";
 import NavLinks from "./../components/navbar/NavLinks";
-import Avatar from "./../components/navbar/Avatar";
 import "./../styles/header.css";
 import IconAvatarDisplay from "../components/icon/IconAvatarDisplay";
-import UserContext from "../auth/UserContext";
 import { useAuth } from "../auth/useAuth";
 
 

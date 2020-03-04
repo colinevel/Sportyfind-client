@@ -51,7 +51,7 @@ export default withRouter(function CreateEvent({
     };
 
     getData();
-  }, [mode, _id]);
+  }, []);
 
   const handleDayChange = e => {
     setState({ ...state, date: e });
@@ -75,10 +75,7 @@ export default withRouter(function CreateEvent({
     setState({ ...state, isRequesting: true });
 
     try {
-      if (mode === "create") {
-        const apiResult = await APIHandler.post("/events/create", state);
-      } else await APIHandler.patch(`/events/edit/${match.params.id}`, state);
-
+       await APIHandler.post("/events/create", state);
       history.push({
         pathname: "/events",
         search: "?sport=AllSports"
@@ -87,7 +84,8 @@ export default withRouter(function CreateEvent({
       console.error(apiErr);
     }
   };
-  console.log("rerendering....");
+  
+  
   return (
     <div className="toute">
       <p className="createevent">Create an event</p>
@@ -134,6 +132,7 @@ export default withRouter(function CreateEvent({
               // onDayChange={day => console.log("this is the new day", day)}
               className="input"
               id="date"
+              placeholder= {"Choose your date"}
               value={moment(state.date).format("MMMM Do YYYY")}
             />
           </div>
