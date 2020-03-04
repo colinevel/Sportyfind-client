@@ -39,7 +39,7 @@ if (currentUser) {
                 <div>Remaining places : <span>{remainingPlaces}</span></div>
                 <div className="seemoreandjoin">
 
-                    <Link className="seemore" to={`/events/${event._id}`}>see more</Link>
+                    <Link className="seemore action-button" to={`/events/${event._id}`}>Details</Link>
                     <Buttons event={event} history={history} clbk={clbk}/>
                 </div>
             </div>

@@ -1,5 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
-import { withRouter } from "react-router-dom";
+import React, { Component } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import "react-google-places-autocomplete/dist/assets/index.css";
 import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
@@ -78,18 +77,6 @@ export default class UpdateEvent extends Component {
     }));
   };
 
-  // geocodeByAddress(state.localisation)
-  //   .then(console.log(state.localisation))
-  //     .then(results => getLatLng(results[0]))
-  //     .then(({ lat, lng }) => {
-  //       this.setState(prevValues => ({
-  //       ...prevValues,
-  //       lat: lat,
-  //       lng: lng
-  //     }));
-  //     console.log('Successfully updated latitude and longitude', { lat, lng })
-  //   }
-  // )
 
   componentDidMount() {
     APIHandler.get(`/events/${this.props.match.params.id}`)

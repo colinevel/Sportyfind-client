@@ -56,7 +56,7 @@ export default function Event({ match, history }) {
 
      
    
-      <div className="adminbuttons">1
+      <div className="adminbuttons">
       <Buttons event={event} 
       match={match} 
       clbk={() => getData()}
