@@ -41,6 +41,9 @@ export default withRouter(function CreateEvent({
         const sportsRes = await APIHandler.get(`/sports`);
         newState.sports = sportsRes.data.sports;
 
+        moment.updateLocale(moment.locale(), { invalidDate: "Choose your date" })
+
+
         setState(newState);
       } catch (err) {
         console.log(err);
