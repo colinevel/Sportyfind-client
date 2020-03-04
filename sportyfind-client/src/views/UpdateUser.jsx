@@ -15,15 +15,13 @@ export default function UpdateUser(props) {
         firstName,
         lastName,
         city,
-        avatar,
-        password }, setFullUser] = useState({
+        avatar }, setFullUser] = useState({
             avatarTmp: "",
             email: "",
             username: "",
             lastName: "",
             firstName: "",
             city: "",
-            password: "",
             avatar: null
         })
 
@@ -36,7 +34,6 @@ export default function UpdateUser(props) {
                 lastName,
                 firstName,
                 city,
-                password,
                 avatar } = currentUser;
             setFullUser({
                 email,
@@ -44,7 +41,6 @@ export default function UpdateUser(props) {
                 lastName,
                 firstName,
                 city,
-                password,
                 avatar
             })
         }
@@ -150,22 +146,6 @@ export default function UpdateUser(props) {
                 type="email"
                 defaultValue={currentUser.email}
             // onChange={e => setEmail(e.target.value)}
-            />
-            <label htmlFor="password">old password</label>
-            <input
-                className="input"
-                id="old-password"
-                type="password"
-                placeholder="your previous password here"
-            // onChange={e => setOldPassword(e.target.value)}
-            />
-            <label htmlFor="password">new password</label>
-            <input
-                className="input"
-                id="new-pasword"
-                type="password"
-                placeholder="your new password here"
-            // onChange={e => setNewPassword(e.target.value)}
             />
             <button className="btn">ok</button>
         </form>

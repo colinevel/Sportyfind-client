@@ -7,66 +7,18 @@ import { withRouter } from "react-router-dom"
 export default withRouter(function Buttons({ event, history, clbk, match }) {
     const { isLoading, currentUser } = useAuth();
     const [action, setAction] = useState(false);
-    const [newEvent, setNewEvent] = useState(null)
 
-    // const getData = async () => {
-    //   const eventRes = await apiHandler.get(`/events/${match.params.id}`);
-    //   setNewEvent(eventRes.data);
-    // }
+
+
 
     useEffect(() => {
         clbk()
     }, []);
 
-
-    // let [newParticipants, setNewParticipants] = useState()
-
-    // console.log(newParticipants);
-
-
-    //     useEffect(() => {
-    //         if (!isLoading) {
-    //             const newParticipants = event.participants;
-    //             setNewParticipants({
-    //                 newParticipants
-    //             })
-    //         }
-    //     }, [isLoading]);
-
-
-    //     console.log(newParticipants);
-
-
-
-
-    //     const handleJoin = async e => {
-    //         try {
-    //             apiHandler
-    //             .patch(`/events/edit/${event._id}`, {
-    //                 participants: newParticipants.push(currentUser._id)
-    //             });
-    //             this.props.history.push({
-    //                 pathname: '/events',
-    //                 search: '?sport=AllSports'
-    //             });
-    //         } catch(err) {
-    //             //
-    //         }
-    //     }
-
-
-
-
-
-
-
-
-
     if (isLoading) return null;
 
-
     const deleteEvent = async () => {
-        const eventRes = await apiHandler.delete("/events", event._id);
+        await apiHandler.delete("/events", event._id);
         clbk()
         setAction(!action)
         history.push({
@@ -77,25 +29,15 @@ export default withRouter(function Buttons({ event, history, clbk, match }) {
 
 
     const joinEvent = async () => {
-        const eventRes = await apiHandler.patch(`/events/join/${event._id}`, {});
-        if (clbk) {
-            clbk()
-            setAction(!action)
-        }
-        else {
-            setNewEvent(eventRes.data);
-        }
+        await apiHandler.patch(`/events/join/${event._id}`, {});
+        clbk()
+        setAction(!action)
     }
 
     const leaveEvent = async () => {
-        const eventRes = await apiHandler.patch(`/events/leave/${event._id}`, {});
-        if (clbk) {
-            clbk()
-            setAction(!action)
-        }
-        else {
-            setNewEvent(eventRes.data);
-        }
+        await apiHandler.patch(`/events/leave/${event._id}`, {});
+        clbk()
+        setAction(!action)
     }
 
 
