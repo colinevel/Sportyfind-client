@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CardsList from "../components/CardsList";
 import FilterBar from "../components/FilterBar";
 import apiHandler from "../api/APIHandler";
+import moment from 'moment';
 
 
 
@@ -11,7 +12,7 @@ export default class Events extends Component {
         filterBySport: this.props.history.location.search.replace("?sport=", ""),
         filterByCity: "",
         sports: [],
-        events: []
+        events: [],
     }
 
     getEvents = () => {
@@ -20,7 +21,6 @@ export default class Events extends Component {
             this.setState({ sports: apiRes[0].data.sports, events: apiRes[1].data.events })
         })
         .catch(apiErr => console.error(apiErr));
-
     }
 
     componentDidMount() {
@@ -39,14 +39,18 @@ export default class Events extends Component {
     }
 
 
-    onFilterBarUpdate = (type, value) => {
+    onFilterBarUpdate = (type, value,event) => {
         if (type === 'sport') { this.setState({ filterBySport: value }) }
         if (type === 'search') { this.setState({ filterByCity: value }) }
         // if (type === 'date') { this.setState({ filterByDate: value }) }
+        // if (moment(event.date).isSame(event.date)) { this.setState({ events: event.date})}
+        // if (type === moment(Date)) { this.setState({filterbyDate: value}) }
+        // if (moment(event.date.value).isSame(event.date.value)) { this.setState({ date: value})}  
         if (type === 'pastEvents') { this.setState({ filterByPastEvents: value }) }
+        
     }
 
-
+   
 
     render() {
         return (

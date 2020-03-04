@@ -16,14 +16,18 @@ export default class MyDashboard extends Component {
         events: []
     }
 
-    componentDidMount() { 
-
+    getEvents = () => {
         Promise.all([apiHandler.get("/sports"), apiHandler.get("/dashboard")])
             .then(apiRes => {
                 console.log("this is my apiRes", apiRes);
                 this.setState({ sports: apiRes[0].data.sports, events: apiRes[1].data.events })
             })
             .catch(apiErr => console.error(apiErr));
+        }
+
+
+    componentDidMount() { 
+        this.getEvents()
     }
 
     eventsFiltered = () => {
@@ -56,7 +60,7 @@ export default class MyDashboard extends Component {
                 {/* <hr /> */}
                 <FilterBar clbk={this.onFilterBarUpdate} filter={this.state.filterBySport} sports={this.state.sports}/>
                 {/* <hr /> */}
-                <CardsList events={this.eventsFiltered()} />
+                <CardsList history={this.props.history} events={this.eventsFiltered()}  clbk={() => this.getEvents()} />
             </div>
         )
     }
