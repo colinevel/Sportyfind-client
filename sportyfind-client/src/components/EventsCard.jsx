@@ -20,10 +20,10 @@ export default function EventsCard({ event,history, clbk }) {
 
             <hr className="separation"></hr>
             <div className="information">
-                <div>{event.name}</div>
                 {event.sport && <div>{event.sport.name} {event.sport.logo}</div>}
-                <div>localisation : {event.localisation}</div>
-                <div>remaining places : <span>{remainingPlaces}</span></div>
+                <div>{event.name}</div>
+                <div>{event.localisation}</div>
+                <div>Remaining places : <span>{remainingPlaces}</span></div>
                 <div className="seemoreandjoin">
 
                     <Link className="seemore" to={`/events/${event._id}`}>see more</Link>

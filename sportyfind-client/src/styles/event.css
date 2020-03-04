@@ -44,23 +44,23 @@
 }
 
 .btndeleteevent {
-    font-size: 3vw;
+    font-size: 1.2rem;
     background-color: crimson;
     border-radius: 4vw;
 }
 
 .btnjoinevent {
-    font-size: 3vw;
+    font-size: 1.2rem;
     background-color: green;
     border-radius: 4vw;
 }
 .btnleaveevent {
-    font-size: 3vw;
+    font-size: 1.2rem;
     background-color: orange;
     border-radius: 4vw;
 }
 .btneditevent {
-    font-size: 3vw;
+    font-size: 1.2rem;
     background-color: greenyellow;
     border-radius: 4vw;
 }
