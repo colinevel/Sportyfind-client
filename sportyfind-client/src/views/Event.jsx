@@ -25,12 +25,12 @@ export default function Event({ match, history }) {
   const [event, setEvent] = useState(null)
 
 
+  const getData = async () => {
+    const eventRes = await apiHandler.get(`/events/${match.params.id}`);
+    setEvent(eventRes.data);
+  }
 
   useEffect(() => {
-    const getData = async () => {
-      const eventRes = await apiHandler.get(`/events/${match.params.id}`);
-      setEvent(eventRes.data);
-    }
     getData()
   }, []);
 
@@ -56,8 +56,11 @@ export default function Event({ match, history }) {
 
      
    
-      <div className="adminbuttons">
-      <Buttons event={event} />
+      <div className="adminbuttons">1
+      <Buttons event={event} 
+      match={match} 
+      clbk={() => getData()}
+      />
 
 
 
