@@ -119,16 +119,16 @@ export default withRouter(function Buttons({ event, history, clbk, match }) {
 
 
             {event ? currentUser && currentUser._id === event.creator._id && (
-                <button className="btndeleteevent" onClick={deleteEvent}> Delete </button>
+                <button className="btndeleteevent action-button" onClick={deleteEvent}> Delete </button>
             ) : <p>NO DATA YET</p>}
 
-            {event ? currentUser && participantsId.includes(currentUser._id) && currentUser._id !== event.creator._id && (<button className="btnleaveevent" onClick={leaveEvent}> Leave </button>
+            {event ? currentUser && participantsId.includes(currentUser._id) && currentUser._id !== event.creator._id && (<button className="btnleaveevent action-button" onClick={leaveEvent}> Leave </button>
             ) : <p>NO DATA YET</p>}
 
-            {event && currentUser ? !participantsId.includes(currentUser._id) && (<button className="btnjoinevent"
+            {event && currentUser ? !participantsId.includes(currentUser._id) && (<button className="btnjoinevent action-button"
                 onClick={joinEvent}
             > Join </button>
-            ) : <a href="/signin" className="btnjoinevent"> Join </a>}
+            ) : <a href="/signin" className="btnjoinevent action-button"> Join </a>}
 
         </div>
     )

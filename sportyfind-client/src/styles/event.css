@@ -44,20 +44,40 @@
 }
 
 .btndeleteevent {
-    font-size: 3vw;
+    /* font-size: 3vw; */
     background-color: crimson;
-    border-radius: 4vw;
+    /* border-radius: 4vw; */
 }
 
 .btnjoinevent {
-    font-size: 3vw;
+    /* font-size: 3vw; */
     background-color: green;
-    border-radius: 4vw;
+    /* border-radius: 4vw; */
+}
+
+.action-button
+{
+	position: relative;
+	/* padding: 10px 40px; */
+    margin: 0px 10px 10px 0px;
+    float: left;
+	border-radius: 10px;
+	/* font-family: 'Pacifico', cursive; */
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+}
+
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 0px solid;
 }
 .btnleaveevent {
-    font-size: 3vw;
+    /* font-size: 3vw; */
     background-color: orange;
-    border-radius: 4vw;
+    /* border-radius: 4vw; */
 }
 .btneditevent {
     font-size: 3vw;
