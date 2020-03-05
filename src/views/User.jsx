@@ -38,13 +38,13 @@ export default function User() {
                 <div className="details">First Name: {currentUser.firstName}</div>
                 <div className="details">Last Name: {currentUser.lastName}</div>
                 <div className="details">City: {currentUser.city}</div>
-                <div className="details">Email: {currentUser.email}</div>
-                <Link className="link"  to="/users/edit/:id">
-            <button className="btn">edit</button>
-      </Link>
+                <div className="details">Email: {currentUser.email}</div>             
+                <Link className="linkedit"  to="/users/edit/:id">               
+                <button className="btnupdateuser">edit</button>
+                </Link>
+              
             </div>
-            
-            
-        </div>
+            </div>
+                       
     );
 }
