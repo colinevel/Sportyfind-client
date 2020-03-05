@@ -14,7 +14,7 @@
     display: block;
     height: 7vh;
     border-radius: 31px;
-    border-color: black;
+    border-color:#00008B;
     padding: 0 35px;
 }
 
@@ -35,6 +35,7 @@ select {
     align-items: center;
     margin-bottom: 2vh;
     padding: 5vh;
+    margin-top: -5vh;
 }
 
 .all {
@@ -84,7 +85,8 @@ select {
 .createevent {
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     font-size: 8vh;
-    padding: 50px 38px;
+    margin-top: 5vh;
+    color: #00008B;
     text-align: center;
     text-rendering: optimizeLegibility;
 
@@ -96,8 +98,13 @@ select {
     .form{
         display: grid;
         grid-gap: 2vw;
-        grid-auto-rows: minmax(100px, 122px);
+        grid-auto-rows: minmax(100px, 1000px);
         grid-row-gap: 8vh;
+        margin-bottom: 6vh;
+    }
+
+    header {
+        margin-bottom: -4vh;
     }
 
     .btn {

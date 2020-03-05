@@ -2,6 +2,8 @@
       float: left;
   }
 
+ 
+
   .logoContainer {
     display: flex;
     align-items: center;
@@ -19,6 +21,44 @@
     /* background-color: rgb(80, 161, 236); */
     background: linear-gradient(white, rgb(80, 161, 236));
     }
+
+    footer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0px 1px 6px rgb(80, 161, 236);
+      /* background-color: rgb(80, 161, 236); */
+      background: linear-gradient(white, rgb(80, 161, 236));
+      height: 12vh;
+      margin-top: 12vh;
+      align-items: center;
+    }
+
+  .Sportyfindname {
+    font-size: 3vh;
+    padding-right: 2vw;
+  }
+
+  .linkedinimg {
+    width:2vw;
+    height:4vh;
+    margin-top: 1vh;
+  }
+
+  .linkedin {
+    display: flex;
+    align-content: center;
+    padding-left: 40vw;
+  }
+
+  .namelkdn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
   
   .hamburger {
     height: 20px;

@@ -13,6 +13,7 @@ import UpdateUser from "./views/UpdateUser";
 import User from "./views/User";
 import NotFound from "./views/NotFound";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 // auth
@@ -62,7 +63,10 @@ export default function App() {
               
               <Route path="*" component={NotFound} />
             </Switch>
+            
           </main>
+          <Footer />
+          
         </React.Fragment>
       )}
     </UserContext.Provider>
