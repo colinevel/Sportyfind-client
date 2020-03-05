@@ -23,12 +23,12 @@ if (currentUser) {
 
 
     return (
-
-        <div className={creator ? "cardOfevent creatorCard": participant ? "cardOfevent participantCard" : "cardOfevent"}>
+        <div className="cardOfevent">
+        {/* <div className={creator ? "cardOfevent creatorCard": participant ? "cardOfevent participantCard" : "cardOfevent"}> */}
             <img className="backimg" src={event.sport.image} alt="" />
-
             <div className="eventdate">
                 <div >{moment(event.date).format("MMMM Do YYYY")} - {event.time}</div>
+                {creator ? (<div className={"creatorCard corner-ribbon top-right red"}>Organizer</div>) : participant ? (<div className={"participantCard corner-ribbon top-right green"}>Player</div>) : false}
             </div>
 
             <hr className="separation"></hr>
@@ -46,3 +46,6 @@ if (currentUser) {
         </div>
     )
 }
+
+        // {creator ? (<div className={"cardOfevent creatorCard"}>Owner</div>) : participant ? (<div className={"cardOfevent participantCard"}>Participant</div>) : <div className={"cardOfevent"}></div>}
+
