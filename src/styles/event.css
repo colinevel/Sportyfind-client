@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+.eventdetails{
+    display: flex;
+    margin-top: 8vh;
+    justify-content: space-evenly;
+    
+}
+
+.details {
+    font-size: 2vw;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+
+#localisation {
+    text-align: center;
+}
+
+
+.eventdescr {
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    padding: 6vh;
+    box-shadow: 10px 5px 5px grey;;
+    display: flex;
+    flex-direction: column;
+    height: 78vh;
+    justify-content: inherit;
+}
+
+.googlemap {
+    display: flex;
+    flex-direction: column;
+    justify-content: inherit;
+}
+
+.eventtitle {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    font-size: 3.5vw;
+    margin-top: 2vh;
+    margin-bottom: -2vh;
+}
+
+.adminbuttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin-top: 7vh;
+}
+
+.btndeleteevent {
+    background-color: rgb(209, 16, 16);
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.btnjoinevent {
+    background-color: green;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.action-button
+{
+	position: relative;
+    margin: 0px 10px 10px 0px;
+    float: left;
+	border-radius: 10px;
+	font-size: 25px;
+	color: #FFF;
+    text-decoration: none;	
+    margin-top: 2vh;
+}
+
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 0px solid;
+}
+.btnleaveevent {
+    background-color: orange;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+}
+.btneditevent {
+    font-size: 1.2rem;
+    background-color: orange;
+    border-radius: 4vw;
+    position: relative;
+    float: left;
+    margin-top: 1vh;
+	border-radius: 10px;
+	font-size: 25px;
+	color: #FFF;
+    text-decoration: none;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+}
+
+.googlemap {
+    margin-top: 3vh;
+}
+
+.googlemap > div > div {
+    height: 40vh !important;
+    width: 50vw;
+}
