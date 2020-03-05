@@ -66,6 +66,7 @@ export default class Events extends Component {
     render() {
         return (
             <div>
+             <div className="filterbartitle">All Events</div> 
                 {/* <hr /> */}
                 <FilterBar clbk={this.onFilterBarUpdate}
                     filter={this.state.filterBySport} sports={this.state.sports} />

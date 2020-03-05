@@ -11,7 +11,7 @@ export class MapsContainer extends Component {
     }
     const mapStyles = {
       width: "50%",
-      maxHeight: "100%",
+      height: "150%",
       position: "absolute"
     };
 

@@ -65,6 +65,7 @@ export default class MyDashboard extends Component {
         
         return (
             <div>
+             <div className="filterbartitle">My Events</div>
                 {/* <hr /> */}
                 <FilterBar clbk={this.onFilterBarUpdate} filter={this.state.filterBySport} sports={this.state.sports}/>
                 {/* <hr /> */}

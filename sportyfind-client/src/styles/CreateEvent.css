@@ -10,12 +10,11 @@
     margin-top: 1vh;
     font-family: Oswald-Medium;
     font-size: 16px;
-    color: #43383e;
     line-height: 1.2;
     display: block;
-    height: 4vh;
-    background: #fff;
+    height: 7vh;
     border-radius: 31px;
+    border-color: black;
     padding: 0 35px;
 }
 
@@ -26,16 +25,14 @@ select {
     color: #43383e;
     border-radius: 31px;
     padding: 0 35px;
-    width: 30%;
+    width: 36%;
 }
 
 .form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: 5px solid  rgb(22, 97, 168);
-    outline: 5px solid rgb(255, 145, 0);
-    /* border-radius: 3vh; */
+    align-items: center;
     margin-bottom: 2vh;
     padding: 5vh;
 }
@@ -49,16 +46,33 @@ select {
 }
 
 .btn {
-    background-color:  rgb(22, 97, 168);
+    background-color: rgb(22, 97, 168);
     border-radius: 5vh;
-    border: 2px solid rgb(255, 145, 0);
-    width: 50%;
+    width: 57%;
     align-self: center;
-    height: 4vh;
-    font-size: 1.5vw;
+    height: 7vh;
+    font-size: 2.5vw;
     color: white;
-
+    margin-top: 4vh;
 }
+
+.btn:hover {
+    background-color: rgb(18, 56, 92);
+}
+
+
+.btnok {
+    background-color: rgb(22, 97, 168);
+    border-radius: 5vh;
+    width: 25%;
+    align-self: center;
+    height: 7vh;
+    font-size: 2.5vw;
+    color: white;
+    margin-top: 4vh;
+}
+
+
 
 .toute {
     display: flex;
@@ -68,10 +82,57 @@ select {
 }
 
 .createevent {
-    font-size: 5vw;
-    color: rgb(22, 97, 168);;
-    text-shadow:0 -1px 0 rgb(255, 145, 0), 0 -4px 0  rgb(22, 97, 168);;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 8vh;
+    padding: 50px 38px;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+
     
+}
+
+
+@media only screen and (max-width: 768px) {
+    .form{
+        display: grid;
+        grid-gap: 2vw;
+        grid-auto-rows: minmax(100px, 122px);
+        grid-row-gap: 8vh;
+    }
+
+    .btn {
+        background-color: rgb(22, 97, 168);
+        border-radius: 5vh;
+        width: 97%;
+        align-self: center;
+        height: 9vh;
+        font-size: 4.5vw;
+        color: white;
+        margin-top: 4vh;
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .form {
+    padding-left: 0vh;
+    }
+
+    .btn {
+        background-color: rgb(22, 97, 168);
+        border-radius: 5vh;
+        width: 97%;
+        align-self: center;
+        height: 9vh;
+        font-size: 4.5vw;
+        color: white;
+        margin-top: 4vh;
+    }
+
+    .input {
+        width: 50vw;
+    }
+
 }
 
 

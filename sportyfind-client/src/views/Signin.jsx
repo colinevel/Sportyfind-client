@@ -26,10 +26,13 @@ export default function Signin(props) {
     return (
         <React.Fragment>
             <form className="form" onSubmit={handleSubmit}>
+            <div className="all">
                 <h1 className="title">Signin</h1>
+                <div className="nameinput">
+
                 <label className="label" htmlFor="email">
                     email
-      </label>
+                </label>
                 <input
                     className="input"
                     id="email"
@@ -37,6 +40,10 @@ export default function Signin(props) {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
+                </div>
+
+                <div className="nameinput">
+
                 <label className="label" htmlFor="password">
                     password
       </label>
@@ -47,7 +54,10 @@ export default function Signin(props) {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                <button className="btn">ok</button>
+                </div>
+                <button className="btnok">ok</button>
+
+                </div>
             </form>
             <p className="parag">
                 No account yet ? please{" "}

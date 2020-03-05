@@ -2,35 +2,20 @@
 .card {
     width: 25vw;
     height: 30vh;
-    /* border: 2px solid grey; */
     border-top-left-radius: 2vw; 
     border-top-right-radius: 2vw;
-    /* padding-left: 2vw; */
-    /* padding-top: 3vh;
-    margin-top: 2vh;  */
     margin-left: 3.5vw;
     margin-bottom: 15vh;
-
-
     background: linear-gradient(white, rgb(80, 161, 236));
     transition:.2s;
-    
-    /* transform: rotatex(10deg) translatey(10px) translatex(10px); */
     box-shadow: 0px 10px 20px rgba(0,0,0, 0.5);
 
 }
 
 .card:hover {
-    /* transform: scale(1.05); */
-
     transform: scale(0.9, 0.9);
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.25), 
       -5px -5px 30px 15px rgba(0,0,0,0.22);
-      /* transform: rotateY(360deg);
-      -webkit-transform: rotateY(360deg);
-      transition-duration: 1s;
-      -webkit-transition-duration:1s; */
-
 }
 
 .list {
@@ -49,13 +34,32 @@
 }
 
 .title {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 8vh;
+    padding: 80px 50px;
+    align-self: center;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+ 
+}
+
+.accroche {
+    background-image: url(https://www.suaps.parisdescartes.fr/wp-content/uploads/sites/21/2019/09/accueil_suaps.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    margin-top: 2vh;
     display: flex;
     justify-content: center;
-    margin: 4vh;
-    font-size: 3vw;
-    color: #130686;
-
+    align-items: flex-end;
+    color: white;
+    font-size: 8vh;
+    scroll-padding-top: 88vh;
+    background-color: white;
+    text-shadow: 0 0 10px black, 0 0 5px white;
 }
+
 
 
 .alllist {
@@ -76,21 +80,91 @@ a {
 
   
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 780px) {
     .list{
         display: grid;
         grid-gap: 2vw;
-        grid-auto-rows: minmax(100px, 225px);
+        grid-auto-rows: minmax(100px, 250px);
         grid-row-gap: 8vh;
+        grid-template-columns: repeat(2, 1fr); 
     }
+
+    .accroche {
+        display: flex;
+        justify-content: center;
+        height: 48vh;
+        margin-bottom: -11vh;
+        align-items: center;
+    }
+
+    .title {
+        margin-top: 4vh;
+        margin-bottom: -8vh;
+    }
+
+    h2 {
+        font-size: 3vh;
+    }
+
+    .card {
+        width: 39vw;
+        height: 30vh;
+        border-top-left-radius: 2vw; 
+        border-top-right-radius: 2vw;
+        margin-left: 3.5vw;
+        margin-bottom: 15vh;
+        background: linear-gradient(white, rgb(80, 161, 236));
+        transition:.2s;
+        box-shadow: 0px 10px 20px rgba(0,0,0, 0.5);
+    }
+
+
+
 }
 
 @media only screen and (max-width: 400px) {
     .list{
         display: grid;
         grid-gap: 2vw;
-        grid-auto-rows: minmax(100px, 122px);
-        grid-row-gap: 8vh;
+        grid-auto-rows: minmax(100px, 120px);
+        grid-row-gap: 4vh;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .accroche {
+        display: flex;
+        justify-content: center;
+        height: 48vh;
+        margin-bottom: -11vh;
+        align-items: center;
     }
 
-}
+    .sportname {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 4vh;
+    }
+
+    .title {
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        font-size: 8vh;
+        padding: 74px 17px;
+        margin-bottom: -11vh;
+        align-self: center;
+        text-align: center;
+        text-rendering: optimizeLegibility;
+ 
+    }
+    .card {
+        width: 37vw;
+        height: 19vh;
+        border-top-left-radius: 2vw;
+        border-top-right-radius: 2vw;
+        margin-left: 3.5vw;
+        margin-bottom: 15vh;
+        background: linear-gradient(white, rgb(80, 161, 236));
+        transition: .2s;
+        box-shadow: 0px 10px 20px rgba(0,0,0, 0.5);
+    }
+
+    }
+
