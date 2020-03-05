@@ -6,7 +6,7 @@ export default function Logo() {
     return (
         <Link exact to="/" className="logoContainer">
         <div className="logo">
-            <img id="logo" src="./../../../images/logoSportify.png" alt="logo" />
+            <img id="logo" src="./../../../images/logo-sportyfind-2.png" alt="logo" />
         </div>
         </Link>
     )
