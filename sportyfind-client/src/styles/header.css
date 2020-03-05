@@ -67,7 +67,7 @@
   nav a {
     display: block;
     padding: .4em;
-    color: blue;
+    color: #08415C;
   }
   
   header input[type="checkbox"]:checked ~ nav {
