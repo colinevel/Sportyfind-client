@@ -93,8 +93,11 @@ export default function UpdateUser(props) {
         <form
             className="form"
             onSubmit={handleSubmit}
-            onChange={handleChange}
-        >
+            onChange={handleChange}>
+
+        <div className="all">
+            <div className="nameinput">
+
             <h1 className="title">Update infos</h1>
             <label className="label" htmlFor="avatar">
                 avatar
@@ -109,6 +112,11 @@ export default function UpdateUser(props) {
                 defaultValue={currentUser.username}
             // onChange={e => setUsername(e.target.value)}
             />
+
+            </div>
+
+            <div className="nameinput">
+
             <label className="label" htmlFor="firstName">
                 firstName
                     </label>
@@ -119,6 +127,10 @@ export default function UpdateUser(props) {
                 defaultValue={currentUser.firstName}
             // onChange={e => setFirstName(e.target.value)}
             />
+            </div>
+
+            <div className="nameinput">
+
             <label className="label" htmlFor="lastName">
                 lastName
                     </label>
@@ -129,6 +141,10 @@ export default function UpdateUser(props) {
                 defaultValue={currentUser.lastName}
             // onChange={e => setLastName(e.target.value)}
             />
+            </div>
+
+            <div className="nameinput">
+
             <label className="label" htmlFor="city">
                 city
                     </label>
@@ -139,6 +155,11 @@ export default function UpdateUser(props) {
                 defaultValue={currentUser.city}
             // onChange={e => setCity(e.target.value)}
             />
+
+            </div>
+
+            <div className="nameinput">
+
             <label htmlFor="email">email</label>
             <input
                 className="input"
@@ -147,7 +168,13 @@ export default function UpdateUser(props) {
                 defaultValue={currentUser.email}
             // onChange={e => setEmail(e.target.value)}
             />
+
+            </div>
+
+            <div className="nameinput">
             <button className="btn">ok</button>
+            </div>
+        </div>
         </form>
     );
 }

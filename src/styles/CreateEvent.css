@@ -18,6 +18,13 @@
     padding: 0 35px;
 }
 
+.errMessage {
+    color: red;
+    font-size: 3vh;
+    margin-top: 1vh;
+    align-self: center;
+   }
+
 select {
     margin-top: 1vh;
     font-family: Oswald-Medium;
@@ -43,8 +50,23 @@ select {
     flex-direction: column;
     align-items: baseline;
     width: 30vw;
-   
+    margin-top: 1vh;
 }
+
+.btnupdateuser {
+    background-color: rgb(22, 97, 168);
+    border-radius: 5vh;
+    width: 57%;
+    align-self: center;
+    height: 7vh;
+    font-size: 2.5vw;
+    color: white;
+    margin-top: 4vh;
+}
+.linkedit {
+    display: flex;
+    justify-content: center;
+} 
 
 .btn {
     background-color: rgb(22, 97, 168);
