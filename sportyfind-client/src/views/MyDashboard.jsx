@@ -14,13 +14,16 @@ export default class MyDashboard extends Component {
         filterByDate: "",
         test: this.props,
         sports: [],
-        events: []
+        events: [],
+        comingEvents:[],
+        pastEvents:[],
+        display:true
     }
 
     getEvents = () => {
         Promise.all([apiHandler.get("/sports"), apiHandler.get("/dashboard")])
             .then(apiRes => {
-                this.setState({ sports: apiRes[0].data.sports, events: apiRes[1].data.events })
+                this.setState({ sports: apiRes[0].data.sports, events: apiRes[1].data.events,comingEvents: apiRes[1].data.events,pastEvents: apiRes[1].data.pastEvents });              
             })
             .catch(apiErr => console.error(apiErr));
         }
@@ -56,7 +59,14 @@ export default class MyDashboard extends Component {
         if (type === 'search') { this.setState({ filterByCity: value }) }
         if (type === 'date') { this.setState({ filterByDate: value }) }
         if (type === 'resetDate') { this.setState({ filterByDate: "" }) }
-        // if (type === 'pastEvents') { this.setState({ filterByPastEvents: value }) }
+        if (type === 'pastEvents') {
+              
+            if(value === "false") {
+                this.setState({ events: this.state.pastEvents });
+            } else{
+            this.setState  ({ events: this.state.comingEvents });
+            }
+        } 
     }
 
 
@@ -67,7 +77,7 @@ export default class MyDashboard extends Component {
             <div>
              <div className="filterbartitle">My Events</div>
                 {/* <hr /> */}
-                <FilterBar clbk={this.onFilterBarUpdate} filter={this.state.filterBySport} sports={this.state.sports}/>
+                <FilterBar clbk={this.onFilterBarUpdate} filter={this.state.filterBySport} sports={this.state.sports} display={this.state.display}/>
                 {/* <hr /> */}
                 <CardsList history={this.props.history} events={this.eventsFiltered()}  clbk={() => this.getEvents()} />
             </div>
