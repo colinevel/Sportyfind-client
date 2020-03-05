@@ -36,7 +36,8 @@
 .title {
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     font-size: 8vh;
-    padding: 80px 50px;
+    margin-top: 5vh;
+    color: #00008B;
     align-self: center;
     text-align: center;
     text-rendering: optimizeLegibility;

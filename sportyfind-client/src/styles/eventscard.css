@@ -144,7 +144,7 @@
     right: -50px;
     left: auto;
     /* transform: rotate(45deg); */
-    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
   }
   
   /* Colors */
