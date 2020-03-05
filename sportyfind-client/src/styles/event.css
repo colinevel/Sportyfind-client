@@ -52,11 +52,11 @@
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    margin-top: 14vh;
+    margin-top: 7vh;
 }
 
 .btndeleteevent {
-    background-color: crimson;
+    background-color: rgb(209, 16, 16);
     width: 8vw;
     display: flex;
     justify-content: center;
@@ -79,7 +79,8 @@
 	border-radius: 10px;
 	font-size: 25px;
 	color: #FFF;
-	text-decoration: none;	
+    text-decoration: none;	
+    margin-top: 2vh;
 }
 
 .action-button:active
@@ -96,11 +97,11 @@
 }
 .btneditevent {
     font-size: 1.2rem;
-    background-color: rgb(214, 218, 17);
+    background-color: orange;
     border-radius: 4vw;
     position: relative;
-    margin: 0px 10px 10px 0px;
     float: left;
+    margin-top: 1vh;
 	border-radius: 10px;
 	font-size: 25px;
 	color: #FFF;
