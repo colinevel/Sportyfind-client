@@ -21,7 +21,7 @@ export default function Signin(props) {
             props.history.push("/");
         } catch (err) {
             setCurrentUser(null);
-            setErrMessage(err.response.data)
+            setErrMessage(err.response && err.response.data || "toto")
         }
     };
 

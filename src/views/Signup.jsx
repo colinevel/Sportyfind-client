@@ -36,7 +36,8 @@ export default class Signup extends Component {
 
             this.props.history.push("/signin");
         } catch (err) {
-            this.setState({ errMessage: err.response.data });
+            console.err(err);
+            this.setState({ errMessage: err.response && err.response.data || "toto"});
 
         }
     };
