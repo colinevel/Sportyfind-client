@@ -1,5 +1,5 @@
 .searchbar {
-    border: 3px solid blue;
+    border: 3px solid #00008B;
     padding: 1vw;
     height: 3vh;
     outline: none;
@@ -18,7 +18,7 @@
 }
 
 .filtersports {
-    border: 3px blue solid;
+    border: 3px #00008B solid;
     width: 15vw;
 }
 
@@ -29,18 +29,18 @@
 
 .filters {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-#calendar-icon {
-    height: 6vh;
 }
 
 .calendar{
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+}
+
+.fa-calendar-alt {
+    font-size: 4.2vh;
+    color: #00008B;
 }
 
 .datePicker{
