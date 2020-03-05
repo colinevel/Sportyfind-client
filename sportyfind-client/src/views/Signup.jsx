@@ -64,7 +64,11 @@ export default class Signup extends Component {
                     onSubmit={this.handleSubmit}
                     onChange={this.handleChange}
                 >
+                <div className="all">
                     <h1 className="title">Signup</h1>
+
+                    <div className="nameinput">
+
                     <label className="label" htmlFor="avatar">
                         avatar
                     </label>
@@ -79,6 +83,10 @@ export default class Signup extends Component {
                         name="username"
                         defaultValue={username}
                     />
+
+                    </div>
+
+                    <div className="nameinput">
                     <label className="label" htmlFor="firstName">
                         firstName
                     </label>
@@ -89,6 +97,11 @@ export default class Signup extends Component {
                         name="firstName"
                         defaultValue={firstName}
                     />
+
+                    </div>
+
+                    <div className="nameinput">
+
                     <label className="label" htmlFor="lastName">
                         lastName
                     </label>
@@ -99,6 +112,12 @@ export default class Signup extends Component {
                         name="lastName"
                         defaultValue={lastName}
                     />
+
+                    </div>
+
+                    <div className="nameinput">
+
+
                     <label className="label" htmlFor="city">
                         city
                     </label>
@@ -109,6 +128,11 @@ export default class Signup extends Component {
                         name="city"
                         defaultValue={city}
                     />
+
+                    </div>
+
+                    <div className="nameinput">
+
                     <label className="label" htmlFor="email">
                         email
                     </label>
@@ -119,6 +143,12 @@ export default class Signup extends Component {
                         name="email"
                         defaultValue={email}
                     />
+
+                    </div>
+
+
+                    <div className="nameinput">
+
                     <label className="label" htmlFor="password">
                         password
                     </label>
@@ -129,7 +159,12 @@ export default class Signup extends Component {
                         name="password"
                         defaultValue={password}
                     />
-                    <button className="btn">ok</button>
+
+                    </div>
+
+                    <button className="btnok">ok</button>
+
+                    </div>
                 </form>
                 <p className="parag">
                     Already a member ? please{" "}

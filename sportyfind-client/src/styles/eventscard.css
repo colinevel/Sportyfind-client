@@ -19,7 +19,7 @@
     border: 1px solid green;
 }
 
-/* img {
+ img {
     max-width: 100%;
     max-height: 100%;
     margin-top: -2vh;
@@ -37,7 +37,6 @@
     display: flex;
     /* border-bottom: 5px solid black; */
     justify-content: center;
-    
 }
 
 .separation {
@@ -63,6 +62,9 @@
     border: 1px solid blue;
     color: white; */
     background-color: blue;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
     /* border-radius: 2vw;
     font-size: 3vh;
     display: flex;

@@ -20,6 +20,8 @@ export default function Home() {
   if (!sports) return <div>No sports yet</div>;
   return (
     <div>
+
+      <div className="accroche">Find friends to practice your favourite Sport! </div>
       <div className="contcont">
       <h1 className="title">Choose your Sport</h1>
       <SportsList sports={sports}/>

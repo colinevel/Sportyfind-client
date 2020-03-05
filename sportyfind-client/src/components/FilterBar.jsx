@@ -29,7 +29,7 @@ export default function FilterBar({ clbk, sports, filter }) {
 
     return (
         <div className="allfilterbar">
-            <div className="filterbartitle">All Events</div>
+            {/* <div className="filterbartitle">All Events</div> */}
             <div className="filters">
                 <select value={filter} onChange={(e) => clbk('sport', e.target.value)} className="filtersports" >
                     <option value="AllSports"
