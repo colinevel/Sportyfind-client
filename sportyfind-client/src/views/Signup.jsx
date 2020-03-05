@@ -14,6 +14,7 @@ export default class Signup extends Component {
         email: "test@sportyfind.com",
         password: "654654",
         city: "",
+        errMessage: ""
     };
 
 
@@ -35,7 +36,8 @@ export default class Signup extends Component {
 
             this.props.history.push("/signin");
         } catch (err) {
-            console.error(err);
+            this.setState({ errMessage: err.response.data });
+
         }
     };
 
@@ -64,113 +66,117 @@ export default class Signup extends Component {
                     onSubmit={this.handleSubmit}
                     onChange={this.handleChange}
                 >
-                <div className="all">
-                    <h1 className="title">Signup</h1>
+                    <div className="all">
+                        <h1 className="title">Signup</h1>
 
-                    <div className="nameinput">
+                        <div className="nameinput">
 
-                    <label className="label" htmlFor="avatar">
-                        avatar
+                            <label className="label" htmlFor="avatar">
+                                avatar
                     </label>
-                    <IconAvatarAdmin avatar={tmpAvatar} clbk={this.handleImage} />
-                    <label className="label" htmlFor="username">
-                        username
+                            <IconAvatarAdmin avatar={tmpAvatar} clbk={this.handleImage} />
+                            <label className="label" htmlFor="username">
+                                username
                     </label>
-                    <input
-                        className="input"
-                        id="username"
-                        type="text"
-                        name="username"
-                        defaultValue={username}
-                    />
+                            <input
+                                className="input"
+                                id="username"
+                                type="text"
+                                name="username"
+                                defaultValue={username}
+                            />
 
-                    </div>
+                        </div>
 
-                    <div className="nameinput">
-                    <label className="label" htmlFor="firstName">
-                        firstName
+                        <div className="nameinput">
+                            <label className="label" htmlFor="firstName">
+                                firstName
                     </label>
-                    <input
-                        className="input"
-                        id="firstName"
-                        type="text"
-                        name="firstName"
-                        defaultValue={firstName}
-                    />
+                            <input
+                                className="input"
+                                id="firstName"
+                                type="text"
+                                name="firstName"
+                                defaultValue={firstName}
+                            />
 
-                    </div>
+                        </div>
 
-                    <div className="nameinput">
+                        <div className="nameinput">
 
-                    <label className="label" htmlFor="lastName">
-                        lastName
+                            <label className="label" htmlFor="lastName">
+                                lastName
                     </label>
-                    <input
-                        className="input"
-                        id="lastName"
-                        type="text"
-                        name="lastName"
-                        defaultValue={lastName}
-                    />
+                            <input
+                                className="input"
+                                id="lastName"
+                                type="text"
+                                name="lastName"
+                                defaultValue={lastName}
+                            />
 
-                    </div>
+                        </div>
 
-                    <div className="nameinput">
+                        <div className="nameinput">
 
 
-                    <label className="label" htmlFor="city">
-                        city
+                            <label className="label" htmlFor="city">
+                                city
                     </label>
-                    <input
-                        className="input"
-                        id="city"
-                        type="text"
-                        name="city"
-                        defaultValue={city}
-                    />
+                            <input
+                                className="input"
+                                id="city"
+                                type="text"
+                                name="city"
+                                defaultValue={city}
+                            />
 
-                    </div>
+                        </div>
 
-                    <div className="nameinput">
+                        <div className="nameinput">
 
-                    <label className="label" htmlFor="email">
-                        email
+                            <label className="label" htmlFor="email">
+                                email
                     </label>
-                    <input
-                        className="input"
-                        id="email"
-                        type="email"
-                        name="email"
-                        defaultValue={email}
-                    />
+                            <input
+                                className="input"
+                                id="email"
+                                type="email"
+                                name="email"
+                                defaultValue={email}
+                            />
 
-                    </div>
+                        </div>
 
 
-                    <div className="nameinput">
+                        <div className="nameinput">
 
-                    <label className="label" htmlFor="password">
-                        password
+
+                            <label className="label" htmlFor="password">
+                                password
                     </label>
-                    <input
-                        className="input"
-                        id="password"
-                        type="password"
-                        name="password"
-                        defaultValue={password}
-                    />
+                            <input
+                                className="input"
+                                id="password"
+                                type="password"
+                                name="password"
+                                defaultValue={password}
+                            />
 
-                    </div>
 
-                    <button className="btnok">ok</button>
+                            {this.state.errMessage && (<div className="errMessage">{this.state.errMessage}</div>)}
 
+
+                            <button className="btn">ok</button>
+
+                        </div>
                     </div>
                 </form>
                 <p className="parag">
                     Already a member ? please{" "}
                     <Link to="/signin" className="link">
                         signin
-              </Link>
+                        </Link>
                 </p>
             </React.Fragment>
         );
