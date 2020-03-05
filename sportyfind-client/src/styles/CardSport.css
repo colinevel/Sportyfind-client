@@ -113,7 +113,7 @@ a {
     .list{
         display: grid;
         grid-gap: 2vw;
-        grid-auto-rows: minmax(100px, 225px);
+        grid-auto-rows: minmax(100px, 250px);
         grid-row-gap: 8vh;
         grid-template-columns: repeat(2, 1fr); 
     }
@@ -128,11 +128,16 @@ a {
 
     .title {
         margin-top: 4vh;
+        margin-bottom: -8vh;
+    }
+
+    h2 {
+        font-size: 3vh;
     }
 
     .card {
         width: 39vw;
-        height: 27vh;
+        height: 30vh;
         border-top-left-radius: 2vw; 
         border-top-right-radius: 2vw;
         margin-left: 3.5vw;
@@ -150,7 +155,7 @@ a {
     .list{
         display: grid;
         grid-gap: 2vw;
-        grid-auto-rows: minmax(100px, 104px);
+        grid-auto-rows: minmax(100px, 120px);
         grid-row-gap: 4vh;
         grid-template-columns: repeat(2, 1fr); 
     }
@@ -160,6 +165,12 @@ a {
         height: 48vh;
         margin-bottom: -11vh;
         align-items: center;
+    }
+
+    .sportname {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 4vh;
     }
 
     .title {
