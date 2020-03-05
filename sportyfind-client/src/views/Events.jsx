@@ -9,7 +9,7 @@ import moment from 'moment';
 export default class Events extends Component {
 
     state = {
-        filterBySport: this.props.history.location.search.replace("?sport=", ""),
+         
         filterByDate: "",
         filterByCity: "",
         sports: [],

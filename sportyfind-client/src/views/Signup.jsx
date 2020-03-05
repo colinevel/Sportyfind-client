@@ -14,6 +14,7 @@ export default class Signup extends Component {
         email: "test@sportyfind.com",
         password: "654654",
         city: "",
+        errMessage: ""
     };
 
 
@@ -35,7 +36,8 @@ export default class Signup extends Component {
 
             this.props.history.push("/signin");
         } catch (err) {
-            console.error(err);
+            this.setState({errMessage : err.response.data});
+           
         }
     };
 
@@ -129,6 +131,11 @@ export default class Signup extends Component {
                         name="password"
                         defaultValue={password}
                     />
+                   
+                   
+                    {this.state.errMessage && ( <div className="errMessage">{this.state.errMessage}</div>)}
+
+
                     <button className="btn">ok</button>
                 </form>
                 <p className="parag">

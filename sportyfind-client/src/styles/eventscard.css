@@ -36,9 +36,9 @@
 .eventdate {
     display: flex;
     /* border-bottom: 5px solid black; */
-    justify-content: center;
+    /* justify-content: center;
     
-}
+} */
 
 .separation {
     border-bottom: 3px solid black;
