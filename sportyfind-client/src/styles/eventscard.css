@@ -64,7 +64,7 @@
     height: 8vh;
     border: 1px solid blue;
     color: white; */
-    background-color: blue;
+    background-color: rgb(4, 139, 230);
     width: 8vw;
     display: flex;
     justify-content: center;
@@ -188,18 +188,10 @@
     }
 
     .seemore {
-        /* width: 22vw;
-        height: 6vh;
-        border: 1px solid blue;
-        color: white;  */
-        background-color: blue;
-        /* border-radius: 2vw; */
-        /* font-size: 2.5vh; */
-        /* display: flex;
-        justify-content: center; */
-        /* position: relative; */
-        /* align-content: center; */
+        background-color: rgb(4, 139, 230);
     }
+
+
     
     .join {
         width: 22vw;
