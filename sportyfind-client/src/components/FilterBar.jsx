@@ -10,13 +10,14 @@ import 'react-day-picker/lib/style.css';
 import moment from 'moment';
 
 
-export default function FilterBar({ clbk, sports, filter }) {
- 
+export default function FilterBar({ clbk, sports, filter, display }) {
+
 
     const [showCalendar, setShowCalendar] = useState(false);
+    const [showPastEvents, setShowPastEvents] = useState(false);
 
     moment.updateLocale(moment.locale(), { invalidDate: "Filter by date" })
-    
+
 
     const [dateFilter, setDateFilter] = useState(" ")
 
@@ -24,6 +25,10 @@ export default function FilterBar({ clbk, sports, filter }) {
         clbk('resetDate', e)
         setDateFilter("")
         setShowCalendar(!showCalendar)
+    }
+
+    const updateShowPastEvents = e => {
+        setShowPastEvents(!showPastEvents)
     }
 
 
@@ -40,7 +45,6 @@ export default function FilterBar({ clbk, sports, filter }) {
                     ))}
                 </select>
 
-
                 <input onChange={(e) => clbk('search', e.target.value)} className="searchbar" type="text" placeholder="enter city" />
                 <div className="calendar">
                     <FontAwesomeIcon
@@ -48,9 +52,6 @@ export default function FilterBar({ clbk, sports, filter }) {
                         className="fal fa-calendar-alt"
                         icon={faCalendarAlt}
                     />
-                    {/* {
-                        showCalendar
-                            ? ( */}
                     <div className={showCalendar ? "datePicker" : "datePicker not-visible"}>
                         <DayPickerInput
                             dayPickerProps={{
@@ -62,16 +63,15 @@ export default function FilterBar({ clbk, sports, filter }) {
                                 setDateFilter(e)
                             }}
                             value={moment(dateFilter).format("MMMM Do YYYY")}
-
-
-
                         />
                     </div>
-                    {/* )
-                            : (
-                                null
-                            )} */}
                 </div>
+                
+                {display && ( <div className="pastEvents"><input id="pastEvents" type="checkbox" name="pastEvents" value={showPastEvents} onChange={(e) => clbk('pastEvents', e.target.value)} onClick={updateShowPastEvents} />
+                <label className="past-events">past events</label></div>)}
+               
+                
+
             </div>
         </div>
     )
