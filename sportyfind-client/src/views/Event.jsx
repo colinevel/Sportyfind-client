@@ -37,18 +37,20 @@ export default function Event({ match, history }) {
 
   return (
     <div>
-      <div><h1 className="eventtitle">Event Details</h1></div>
+      <div><h1 className="eventtitle">{event && event.name}</h1></div>
       <div className="eventdetails">
         <div className="eventdescr">
-          <div className="details">Name of the event: {event && event.name}</div>
-          <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div>
-          <div className="details">Event Date: {event && moment(event.date).format("MMMM Do YYYY")}</div>
-          <div className="details">Event Time: {event && event.time}</div>
-          <div className="details">Event's creator: {event && event.creator.username}</div>
+          {/* <div className="details">Name of the event: {event && event.name}</div> */}
+          {/* <div className="details">Sport: {event && event.sport.name} {event && event.sport.logo}</div> */}
+          <div className="details"><img src={`https://source.unsplash.com/400x200/?${event && event.sport.name}`} alt=""/></div>
+
+          <div className="details">Date of Event: {event && moment(event.date).format("MMMM Do YYYY")}</div>
+          <div className="details">Time of Event: {event && event.time}</div>
+          <div className="details">Organizer: {event && event.creator.username}</div>
           <div className="details">Participants: {event && event.participants.length} <ul>{event && event.participants.map((p, i) => <li key={i}>{p.username}</li>)} </ul></div>
           <div className="details">Max participants: {event && event.maxParticipants}</div>
         </div>
-        <div className="details">Event's localisation: {event && event.localisation}
+        <div className="details" id="localisation">Localisation: {event && event.localisation}
           <div className="googlemap">
             {event && <MapsContainer style={{ width: "50%", height: "50%" }} lat={event.lat} lng={event.lng} />}
           </div>

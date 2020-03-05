@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 
 .eventdetails{
     display: flex;
@@ -13,10 +16,19 @@
     height: 50vh;
 }
 
+#localisation {
+    text-align: center;
+}
+
+
 .eventdescr {
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    padding: 6vh;
+    box-shadow: 10px 5px 5px grey;;
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: 78vh;
     justify-content: inherit;
 }
 
@@ -30,7 +42,7 @@
     display: flex;
     justify-content: center;
     margin-top: 10vh;
-    font-size: 6vw;
+    font-size: 3.5vw;
     margin-top: 2vh;
     margin-bottom: -2vh;
 }
