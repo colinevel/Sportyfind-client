@@ -28,14 +28,14 @@ if (currentUser) {
             <img className="backimg" src={event.sport.image} alt="" />
             <div className="eventdate">
                 <div >{moment(event.date).format("MMMM Do YYYY")} - {event.time}</div>
-                {creator ? (<div className={"creatorCard corner-ribbon top-right red"}>Organizer</div>) : participant ? (<div className={"participantCard corner-ribbon top-right green"}>Player</div>) : false}
+                {creator ? (<div className={"creatorCard corner-ribbon top-right red"}>Created</div>) : participant ? (<div className={"participantCard corner-ribbon top-right green"}>Joined</div>) : false}
             </div>
 
             <hr className="separation"></hr>
             <div className="information">
                 {event.sport && <div>{event.sport.name} {event.sport.logo}</div>}
                 <div>{event.name}</div>
-                <div>{event.localisation}</div>
+                <div className="ellipsis">{event.localisation}</div>
                 <div>Remaining places : <span>{remainingPlaces}</span></div>
                 <div className="seemoreandjoin">
 
