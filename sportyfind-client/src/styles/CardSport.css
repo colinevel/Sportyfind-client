@@ -99,8 +99,8 @@ a {
     }
 
     .title {
-        margin-top: 4vh;
-        margin-bottom: -8vh;
+        margin-top: 11vh;
+        margin-bottom: -4vh;
     }
 
     h2 {
@@ -127,7 +127,7 @@ a {
     .list{
         display: grid;
         grid-gap: 2vw;
-        grid-auto-rows: minmax(100px, 120px);
+        grid-auto-rows: minmax(100px, 150px);
         grid-row-gap: 4vh;
         grid-template-columns: repeat(2, 1fr); 
     }
@@ -149,7 +149,8 @@ a {
         font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
         font-size: 8vh;
         padding: 74px 17px;
-        margin-bottom: -11vh;
+        margin-bottom: -15vh;
+        margin-top: -10vh;
         align-self: center;
         text-align: center;
         text-rendering: optimizeLegibility;
@@ -157,7 +158,7 @@ a {
     }
     .card {
         width: 37vw;
-        height: 19vh;
+        height: 24vh;
         border-top-left-radius: 2vw;
         border-top-right-radius: 2vw;
         margin-left: 3.5vw;
