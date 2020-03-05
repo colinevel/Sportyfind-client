@@ -10,10 +10,11 @@ import MapsContainer from "./../components/MapsContainer";
 import Buttons from "./../components/Buttons";
 import moment from 'moment';
 import { Link } from "react-router-dom";
-
-
 // styles
 import "../styles/event.css"
+
+
+
 React.createContext({
   currentUser: null,
   setCurrentUser: () => { }
