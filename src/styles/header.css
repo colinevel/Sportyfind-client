@@ -181,3 +181,17 @@
   }
 
 
+  @media only screen and (max-width: 400px) {
+
+  .Sportyfindname {
+    font-size: 2vh;
+  }
+
+  .linkedinimg {
+    width: 7vw;
+    height: 4vh;
+    margin-top: 1vh;
+}
+  }
+
+
