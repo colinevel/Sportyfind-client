@@ -58,15 +58,21 @@
     width: 8vw;
     display: flex;
     justify-content: center;
+}
 
+.btndeleteevent:hover {
+    background-color:  rgb(175, 16, 16)
 }
 
 .btnjoinevent {
-    background-color: green;
+    background-color: rgb(6, 177, 74);
     width: 8vw;
     display: flex;
     justify-content: center;
+}
 
+.btnjoinevent:hover {
+    background-color:  rgb(5, 145, 61);
 }
 
 .action-button
@@ -88,11 +94,16 @@
 	border-bottom: 0px solid;
 }
 .btnleaveevent {
-    background-color: orange;
+    background-color: rgba(224, 157, 31);
     width: 8vw;
     display: flex;
     justify-content: center;
 }
+
+.btnleaveevent:hover {
+    background-color: rgb(190, 133, 25);
+}
+
 .btneditevent {
     font-size: 1.2rem;
     background-color: orange;

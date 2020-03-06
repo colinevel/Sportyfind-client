@@ -25,6 +25,12 @@ export default function Event({ match, history }) {
   const { currentUser } = userContext;
   const [event, setEvent] = useState(null)
 
+var remainingPlaces;
+
+  if(event) remainingPlaces = event.maxParticipants - event.participants.length;
+
+  
+
 
   const getData = async () => {
     const eventRes = await apiHandler.get(`/events/${match.params.id}`);
@@ -60,7 +66,9 @@ export default function Event({ match, history }) {
      
    
       <div className="adminbuttons">
-      <Buttons event={event} 
+      <Buttons 
+      remainingPlaces={remainingPlaces} 
+      event={event} 
       match={match} 
       clbk={() => getData()}
       />

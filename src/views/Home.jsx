@@ -9,7 +9,6 @@ export default function Home() {
     apiHandler
       .get(`/sports/selected`)
       .then(res => {
-        // console.log("this is it", res.data.sports);
         setSport(res.data.sports);
       })
       .catch(err => {
