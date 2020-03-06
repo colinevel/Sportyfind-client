@@ -22,7 +22,7 @@ export default function Signin(props) {
         } catch (err) {
             setCurrentUser(null);
             console.error(err)
-            setErrMessage(err.response && err.response.data || "toto")
+            setErrMessage(err.response.data)
         }
     };
 

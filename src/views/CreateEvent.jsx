@@ -31,19 +31,19 @@ export default withRouter(function CreateEvent({
     description: "",
     sport: "",
     sports: [],
-    isRequesting: false
   });
+
+  const [errMessage, setErrMessage]=useState("")
 
   useEffect(() => {
     const getData = async () => {
-      try {
+      try  {
         let newState = { ...state };
         const sportsRes = await APIHandler.get(`/sports`);
         newState.sports = sportsRes.data.sports;
 
         moment.updateLocale(moment.locale(), { invalidDate: "Choose your date" })
-
-
+        
         setState(newState);
       } catch (err) {
         console.log(err);
@@ -82,9 +82,11 @@ export default withRouter(function CreateEvent({
       });
     } catch (apiErr) {
       console.error(apiErr);
+      setErrMessage(apiErr.response.data)
     }
   };
   
+ 
   
   return (
     <div className="toute">
@@ -129,7 +131,6 @@ export default withRouter(function CreateEvent({
             </label>
             <DayPickerInput
               onDayChange={handleDayChange}
-              // onDayChange={day => console.log("this is the new day", day)}
               className="input"
               id="date"
               placeholder= {"Choose your date"}
@@ -191,7 +192,6 @@ export default withRouter(function CreateEvent({
               type="text"
               onSelect={handleAddressChange}
               placeholder="Localisation"
-              // onSelect={console.log}
               autocompletionRequest={{
                 componentRestrictions: {
                   country: ["fr"]
@@ -201,8 +201,10 @@ export default withRouter(function CreateEvent({
           </div>
 
           <div className="nameinput">
-            <button className="btn" disabled={state.isRequesting}>
-              {" "}
+
+          {errMessage && (<div className="errMessage">{errMessage}</div>)}
+
+            <button className="btn" >
               Create Event
             </button>
           </div>

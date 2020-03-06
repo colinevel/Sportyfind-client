@@ -139,7 +139,6 @@ export default class UpdateEvent extends Component {
             </label>
             <DayPickerInput
               onDayChange={this.handleDayChange}
-              // onDayChange={day => console.log("this is the new day", day)}
               className="input"
               id="date"
               value={moment(this.state.date).format("MMMM Do YYYY")}
