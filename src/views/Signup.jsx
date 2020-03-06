@@ -168,17 +168,18 @@ export default class Signup extends Component {
                             {this.state.errMessage && (<div className="errMessage">{this.state.errMessage}</div>)}
 
 
-                            <button className="btn">ok</button>
+                            <button className="btnok">ok</button>
 
                         </div>
                     </div>
-                </form>
-                <p className="parag">
+                    <p className="parag">
                     Already a member ? please{" "}
                     <Link to="/signin" className="link">
-                        signin
+                        Signin
                         </Link>
                 </p>
+                </form>
+
             </React.Fragment>
         );
     }

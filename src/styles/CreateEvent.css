@@ -45,6 +45,11 @@ select {
     margin-top: -5vh;
 }
 
+.parag {
+margin-top: 3vh;
+font-size: 3vh;
+}
+
 .all {
     display: flex;
     flex-direction: column;

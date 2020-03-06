@@ -41,8 +41,23 @@
     align-self: center;
     text-align: center;
     text-rendering: optimizeLegibility;
- 
 }
+
+.title2 {
+    /* font-family: 'Domine', serif; */
+    font-family: 'Patua One', cursive;
+    /* font-family: 'Pathway Gothic One', sans-serif; */
+    /* font-family: 'Alfa Slab One', cursive; */
+    /* font-family: 'Passion One', cursive; */
+    font-size: 8vh;
+    margin-top: 5vh;
+    color: #00008B;
+    align-self: center;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+}
+
+
 
 .accroche {
     background-image: url(https://www.suaps.parisdescartes.fr/wp-content/uploads/sites/21/2019/09/accueil_suaps.jpg);
