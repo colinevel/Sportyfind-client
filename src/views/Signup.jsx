@@ -8,11 +8,11 @@ export default class Signup extends Component {
     state = {
         avatar: "",
         tmpAvatar: "",
-        username: "luffy",
+        username: "",
         firstName: "",
         lastName: "",
-        email: "test@sportyfind.com",
-        password: "654654",
+        email: "",
+        password: "",
         city: "",
         errMessage: ""
     };
