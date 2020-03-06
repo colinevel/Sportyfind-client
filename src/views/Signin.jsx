@@ -61,14 +61,16 @@ export default function Signin(props) {
                     {errMessage && (<div className="errMessage">{errMessage}</div>)}
                     <button className="btnok">ok</button>
 
+
                 </div>
-            </form>
-            <p className="parag">
+                <p className="parag">
                 No account yet ? please{" "}
                 <Link to="/signup" className="link">
-                    signup
+                    Signup
       </Link>
             </p>
+            </form>
+ 
         </React.Fragment>
     );
 }

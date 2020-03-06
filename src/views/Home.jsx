@@ -23,7 +23,7 @@ export default function Home() {
 
       <div className="accroche">Find friends to practice your favourite Sport! </div>
       <div className="contcont">
-      <h1 className="title">Choose your Sport</h1>
+      <h1 className="title2">Choose your Sport</h1>
       <SportsList sports={sports}/>
       </div>
     </div>
