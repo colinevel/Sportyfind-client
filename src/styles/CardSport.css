@@ -144,12 +144,17 @@ a {
         grid-row-gap: 4vh;
         grid-template-columns: repeat(2, 1fr); 
     }
+
     .accroche {
         display: flex;
-        justify-content: center;
-        height: 48vh;
+        justify-content: unsafe;
+        align-items: baseline;
+        font-size: 5vh;
+        height: 20vh;
         margin-bottom: -11vh;
-        align-items: center;
+        /* align-items: center; */
+        text-align: center;
+        margin-top: 8vh;
     }
 
     .sportname {
@@ -181,5 +186,15 @@ a {
         box-shadow: 0px 10px 20px rgba(0,0,0, 0.5);
     }
 
+    .title2 {
+        margin-top: 14vh;
+        font-size: 5vh;
+        margin-bottom: -2vh;
     }
 
+    .footer {
+        width: 100%;
+    }
+
+
+}

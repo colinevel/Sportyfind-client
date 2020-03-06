@@ -61,7 +61,7 @@ font-size: 3vh;
 .btnupdateuser {
     background-color: rgb(22, 97, 168);
     border-radius: 5vh;
-    width: 57%;
+    width: 40%;
     align-self: center;
     height: 7vh;
     font-size: 2.5vw;
@@ -76,7 +76,7 @@ font-size: 3vh;
 .btn {
     background-color: rgb(22, 97, 168);
     border-radius: 5vh;
-    width: 57%;
+    width: 40%;
     align-self: center;
     height: 7vh;
     font-size: 2.5vw;
