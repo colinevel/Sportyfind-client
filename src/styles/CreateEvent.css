@@ -68,6 +68,12 @@ font-size: 3vh;
     color: white;
     margin-top: 4vh;
 }
+
+.btnupdateuser:hover {
+    background-color: rgb(18, 56, 92);
+
+}
+
 .linkedit {
     display: flex;
     justify-content: center;
