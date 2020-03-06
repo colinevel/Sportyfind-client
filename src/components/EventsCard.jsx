@@ -24,7 +24,7 @@ if (currentUser) {
 
     return (
         <div className="cardOfevent">
-        {/* <div className={creator ? "cardOfevent creatorCard": participant ? "cardOfevent participantCard" : "cardOfevent"}> */}
+  
             <img className="backimg" src={event.sport.image} alt="" />
             <div className="eventdate">
                 <div >{moment(event.date).format("MMMM Do YYYY")} - {event.time}</div>
@@ -40,12 +40,10 @@ if (currentUser) {
                 <div className="seemoreandjoin">
 
                     <Link className="seemore action-button" to={`/events/${event._id}`}>Details</Link>
-                    <Buttons event={event} history={history} clbk={clbk}/>
+                    <Buttons remainingPlaces={remainingPlaces} event={event} history={history} clbk={clbk}/>
                 </div>
             </div>
         </div>
     )
 }
-
-        // {creator ? (<div className={"cardOfevent creatorCard"}>Owner</div>) : participant ? (<div className={"cardOfevent participantCard"}>Participant</div>) : <div className={"cardOfevent"}></div>}
 

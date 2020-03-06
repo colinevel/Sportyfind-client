@@ -4,11 +4,12 @@ import apiHandler from "../api/APIHandler";
 import { withRouter } from "react-router-dom"
 
 
-export default withRouter(function Buttons({ event, history, clbk, match }) {
+export default withRouter(function Buttons({ event, history, clbk, match , remainingPlaces}) {
     const { isLoading, currentUser } = useAuth();
     const [action, setAction] = useState(false);
 
-
+var full = true
+remainingPlaces===0 ? full = false : full = true;
 
 
     useEffect(() => {
@@ -67,7 +68,7 @@ export default withRouter(function Buttons({ event, history, clbk, match }) {
             {event ? currentUser && participantsId.includes(currentUser._id) && currentUser._id !== event.creator._id && (<button className="btnleaveevent action-button" onClick={leaveEvent}> Leave </button>
             ) : <p>NO DATA YET</p>}
 
-            {event && currentUser ? !participantsId.includes(currentUser._id) && (<button className="btnjoinevent action-button"
+            {event && currentUser ? !participantsId.includes(currentUser._id) && full && (<button className="btnjoinevent action-button"
                 onClick={joinEvent}
             > Join </button>
             ) : <a href="/signin" className="btnjoinevent action-button"> Join </a>}
