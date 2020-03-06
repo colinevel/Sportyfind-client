@@ -1,6 +1,7 @@
 import React, {  useState } from "react";
 import IconAvatarAdmin from "../components/icon/IconAvatarAdmin";
 import { useAuth } from "../auth/useAuth";
+import IconAvatarDisplay from "../components/icon/IconAvatarDisplay";
 
 import { Link } from "react-router-dom";
 
@@ -33,7 +34,8 @@ export default function User() {
     return (
         <div className="eventdetails">
             <div className="eventdescr">
-                <IconAvatarAdmin avatar={currentUser.avatar} clbk={e => handleAvatar(e.target.files[0])} />
+            <IconAvatarDisplay avatar={currentUser.avatar} />
+                
                 <div className="details">Username: {currentUser.username}</div>
                 <div className="details">First Name: {currentUser.firstName}</div>
                 <div className="details">Last Name: {currentUser.lastName}</div>

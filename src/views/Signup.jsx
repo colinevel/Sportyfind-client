@@ -8,11 +8,11 @@ export default class Signup extends Component {
     state = {
         avatar: "",
         tmpAvatar: "",
-        username: "luffy",
+        username: "",
         firstName: "",
         lastName: "",
-        email: "test@sportyfind.com",
-        password: "654654",
+        email: "",
+        password: "",
         city: "",
         errMessage: ""
     };
@@ -37,7 +37,7 @@ export default class Signup extends Component {
             this.props.history.push("/signin");
         } catch (err) {
             console.error(err);
-            this.setState({ errMessage: err.response && err.response.data || "toto"});
+            this.setState({ errMessage: err.response.data});
 
         }
     };
