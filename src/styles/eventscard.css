@@ -250,7 +250,7 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 2vw;
-        grid-auto-rows: minmax(100px, 350px);
+        grid-auto-rows: minmax(100px, 390px);
     }
 
     .backimg {
