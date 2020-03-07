@@ -156,10 +156,32 @@ font-size: 3vh;
 @media only screen and (max-width: 400px) {
     .form {
         padding-left: 0vh;
-        padding-top: 13vh;
-        margin-top: -12vh;
-        margin-bottom: -20vh;
+        padding-top: 15vh;
+        margin-top: 29vh;
+        margin-bottom: -14vh;
         position: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .parag {
+        margin-top: 3vh;
+        font-size: 3vh;
+        margin-bottom: 3vh;
+        align-self: flex-end;
+        }
+
+    .btnok {
+        background-color: rgb(22, 97, 168);
+        border-radius: 5vh;
+        width: 20vw;
+        align-self: center;
+        height: 7vh;
+        font-size: 5vw;
+        color: white;
+        margin-left: 17vw;
+        margin-top: 4vh
     }
 
     .all {
@@ -168,6 +190,7 @@ font-size: 3vh;
         align-items: baseline;
         width: 31vw;
         margin-top: -35vh;
+        justify-content: center;
     }
 
     .btn {
