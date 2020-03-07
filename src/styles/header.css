@@ -148,6 +148,13 @@
     .hamburger {
       display: none;
     }
+
+    /* .linkedinimg {
+      width: 5vw;
+      height: 4vh;
+      margin-top: 1vh;
+  } */
+
     nav {
       background: transparent;
       float: right;

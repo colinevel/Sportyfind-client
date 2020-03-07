@@ -194,14 +194,12 @@
         display: flex;
         margin-left: -2vw;
         margin-top: 1vh;
-        justify-content: space-evenly;
-        flex-direction: column;
-        
-        
+        justify-content: space-evenly;  
     }
 
     .seemore {
         background-color: rgb(4, 139, 230);
+        width: 27vw;
     }
 
 
@@ -228,4 +226,64 @@
         position: relative;
     
     }
+
+
+    .creatorCard {
+        margin-right: 4vh;
+        margin-top: -1vh;
+    }
   }
+
+  @media only screen and (max-width: 500px) {
+
+    .cardOfevent {
+        width: 84vw;
+        height: 40vh;
+        padding-top: 3vh;
+        margin-left: 2vw;
+        margin-top: 0vh;
+        position: relative;
+        
+    }
+
+    .allcards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2vw;
+        grid-auto-rows: minmax(100px, 295px);
+    }
+
+    .backimg {
+        opacity: 0.5;
+        margin-top: 5.5vh;
+    }
+
+    .information {
+        color: black;
+        font-size: 4vw;
+        font-weight: bold;
+        margin-top:3vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ellipsis{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        /* height: 15px; */
+        width: 174px;
+        white-space: nowrap;
+    }
+
+    .seemoreandjoin {
+        display: flex;
+        margin-left: -2vw;
+        margin-top: 1vh;
+        justify-content: space-evenly;
+    }
+
+
+
+
+}
