@@ -143,11 +143,18 @@
     background-color: none;
   }
   
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 760px) {
 
     .hamburger {
       display: none;
     }
+
+    /* .linkedinimg {
+      width: 5vw;
+      height: 4vh;
+      margin-top: 1vh;
+  } */
+
     nav {
       background: transparent;
       float: right;
@@ -161,6 +168,17 @@
       display: inline-block;
       padding: 15px 1em;
     }
+
+    .footer {
+      width: 100%;
+      box-shadow: 0px 1px 6px rgb(80, 161, 236);
+      /* background-color: rgb(80, 161, 236); */
+      background: linear-gradient(white, rgb(80, 161, 236));
+      height: 12vh;
+      margin-top: 12vh;
+      align-items: center;
+    }
+
   }
   
   .hidden {
@@ -168,3 +186,19 @@
     top: -100%;
     left: -100%;
   }
+
+
+  @media only screen and (max-width: 500px) {
+
+  .Sportyfindname {
+    font-size: 2vh;
+  }
+
+  .linkedinimg {
+    width: 7vw;
+    height: 4vh;
+    margin-top: 1vh;
+}
+  }
+
+

@@ -52,3 +52,59 @@
 }
 
 
+
+@media only screen and (max-width: 500px) {
+.filterbartitle{
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 6vh;
+    margin-top: 8vh;
+    color: #00008B;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+
+}
+
+.allfilterbar {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.filtersports {
+    border: 3px #00008B solid;
+    width: 46vw;
+    margin-bottom: 1vh;
+    height: 5vh;
+    padding-right: 0vw;
+    padding-left: 14.5vw;
+
+}
+
+.searchbar {
+    border: 3px solid #00008B;
+    height: 5vh;
+    outline: none;
+    font-size: 3vh;
+    width: 50vw;
+    padding-left: 13vw;
+    margin-bottom: 2vh;
+    border-radius: 4vw;
+    margin-left: 0vw;
+
+}
+
+.calendar{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+}
+
+

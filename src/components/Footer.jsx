@@ -10,7 +10,7 @@ export default function Footer () {
   return (
 
     <div>    
-    <footer>
+    <footer className="footer">
         
         <div className="logo-uniquement"><img src="../../images/logo-uniquement.png" alt="logo"/></div>
 

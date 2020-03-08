@@ -61,7 +61,7 @@ font-size: 3vh;
 .btnupdateuser {
     background-color: rgb(22, 97, 168);
     border-radius: 5vh;
-    width: 57%;
+    width: 40%;
     align-self: center;
     height: 7vh;
     font-size: 2.5vw;
@@ -82,7 +82,7 @@ font-size: 3vh;
 .btn {
     background-color: rgb(22, 97, 168);
     border-radius: 5vh;
-    width: 57%;
+    width: 40%;
     align-self: center;
     height: 7vh;
     font-size: 2.5vw;
@@ -121,9 +121,7 @@ font-size: 3vh;
     margin-top: 5vh;
     color: #00008B;
     text-align: center;
-    text-rendering: optimizeLegibility;
-
-    
+    text-rendering: optimizeLegibility; 
 }
 
 
@@ -134,6 +132,7 @@ font-size: 3vh;
         grid-auto-rows: minmax(100px, 1000px);
         grid-row-gap: 8vh;
         margin-bottom: 6vh;
+      
     }
 
     header {
@@ -149,13 +148,49 @@ font-size: 3vh;
         font-size: 4.5vw;
         color: white;
         margin-top: 4vh;
+        margin-left: 9vw;
     }
     
 }
 
 @media only screen and (max-width: 400px) {
     .form {
-    padding-left: 0vh;
+        padding-left: 0vh;
+        padding-top: 15vh;
+        margin-top: 29vh;
+        margin-bottom: -14vh;
+        position: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .parag {
+        margin-top: 3vh;
+        font-size: 3vh;
+        margin-bottom: 3vh;
+        align-self: flex-end;
+        }
+
+    .btnok {
+        background-color: rgb(22, 97, 168);
+        border-radius: 5vh;
+        width: 20vw;
+        align-self: center;
+        height: 7vh;
+        font-size: 5vw;
+        color: white;
+        margin-left: 17vw;
+        margin-top: 4vh
+    }
+
+    .all {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        width: 31vw;
+        margin-top: -35vh;
+        justify-content: center;
     }
 
     .btn {
@@ -167,10 +202,54 @@ font-size: 3vh;
         font-size: 4.5vw;
         color: white;
         margin-top: 4vh;
+        margin-left: 16vw;
+    }
+
+    nav {
+        margin-bottom: 2vh;
+    }
+
+    .btnupdateuser {
+        background-color: rgb(22, 97, 168);
+        border-radius: 5vh;
+        width: 40%;
+        align-self: center;
+        height: 7vh;
+        font-size: 6vw;
+        color: white;
+        margin-top: 4vh;
+    }
+
+    .createevent {
+        font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+        font-size: 6vh;
+        margin-top: 10vh;
+        margin-bottom: -1vh;
+        color: #00008B;
+        text-align: center;
+        text-rendering: optimizeLegibility;
     }
 
     .input {
         width: 50vw;
+    }
+
+    #sport {
+        border: 3px #00008B solid;
+    width: 50vw;
+    margin-bottom: 1vh;
+    height: 5vh;
+    padding-left: 2vw;
+    }
+
+    select {
+        margin-top: 1vh;
+        font-family: Oswald-Medium;
+        font-size: 16px;
+        color: #43383e;
+        border-radius: 31px;
+        padding: 0 35px;
+        width: 36%;
     }
 
 }

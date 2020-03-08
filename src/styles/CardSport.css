@@ -105,15 +105,23 @@ a {
 
     .accroche {
         display: flex;
-        justify-content: center;
-        height: 48vh;
+        justify-content: unsafe;
+        align-items: baseline;
+        font-size: 5vh;
+        height: 20vh;
         margin-bottom: -11vh;
-        align-items: center;
+        /* align-items: center; */
+        text-align: center;
+        margin-top: 8vh;
     }
 
     .title {
         margin-top: 11vh;
         margin-bottom: -4vh;
+    }
+
+    .title2 {
+        margin-top: 11vh;
     }
 
     h2 {
@@ -136,20 +144,25 @@ a {
 
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .list{
         display: grid;
         grid-gap: 2vw;
-        grid-auto-rows: minmax(100px, 150px);
+        grid-auto-rows: minmax(100px, 170px);
         grid-row-gap: 4vh;
         grid-template-columns: repeat(2, 1fr); 
     }
+
     .accroche {
         display: flex;
-        justify-content: center;
-        height: 48vh;
+        justify-content: unsafe;
+        align-items: baseline;
+        font-size: 5vh;
+        height: 20vh;
         margin-bottom: -11vh;
-        align-items: center;
+        /* align-items: center; */
+        text-align: center;
+        margin-top: 8vh;
     }
 
     .sportname {
@@ -160,10 +173,11 @@ a {
 
     .title {
         font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-        font-size: 8vh;
-        padding: 74px 17px;
-        margin-bottom: -15vh;
-        margin-top: -10vh;
+        font-size: 7vh;
+        padding: 13px -6px;
+        margin-bottom: 1vh;
+        margin-top: 0vh;
+        margin-left: 16vw;
         align-self: center;
         text-align: center;
         text-rendering: optimizeLegibility;
@@ -181,5 +195,15 @@ a {
         box-shadow: 0px 10px 20px rgba(0,0,0, 0.5);
     }
 
+    .title2 {
+        margin-top: 14vh;
+        font-size: 5vh;
+        margin-bottom: -2vh;
     }
 
+    .footer {
+        width: 100%;
+    }
+
+
+}
