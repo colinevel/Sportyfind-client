@@ -7,8 +7,8 @@ import APIHandler from "../api/APIHandler";
 
 
 export default function Signin(props) {
-    const [email, setEmail] = useState("test@sportyfind.com");
-    const [password, setPassword] = useState("654654");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const userContext = useContext(UserContext);
     const { setCurrentUser } = userContext;
     const [errMessage,setErrMessage]=useState("")
